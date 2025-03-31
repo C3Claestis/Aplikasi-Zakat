@@ -1,6 +1,6 @@
 ﻿namespace Aplikasi_Zakat
 {
-    partial class MuzakiForm
+    partial class AmilForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MuzakiForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AmilForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
             this.dgvMuzzaki = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,21 +46,10 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txtSrchMuzzaki = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMuzzaki)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.txtSrchMuzzaki);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 442);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1004, 64);
-            this.panel1.TabIndex = 0;
             // 
             // btnAdd
             // 
@@ -80,13 +68,12 @@
             this.btnAdd.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnAdd.Location = new System.Drawing.Point(942, 8);
+            this.btnAdd.Location = new System.Drawing.Point(924, 8);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.Transparent;
             this.btnAdd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnAdd.Size = new System.Drawing.Size(50, 50);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvMuzzaki
             // 
@@ -138,8 +125,8 @@
             this.dgvMuzzaki.RowHeadersVisible = false;
             this.dgvMuzzaki.RowHeadersWidth = 51;
             this.dgvMuzzaki.RowTemplate.Height = 24;
-            this.dgvMuzzaki.Size = new System.Drawing.Size(1004, 442);
-            this.dgvMuzzaki.TabIndex = 1;
+            this.dgvMuzzaki.Size = new System.Drawing.Size(986, 395);
+            this.dgvMuzzaki.TabIndex = 3;
             // 
             // Column1
             // 
@@ -240,37 +227,34 @@
             this.Column11.Name = "Column11";
             this.Column11.Width = 68;
             // 
-            // txtSrchMuzzaki
+            // panel1
             // 
-            this.txtSrchMuzzaki.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSrchMuzzaki.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSrchMuzzaki.Location = new System.Drawing.Point(228, 21);
-            this.txtSrchMuzzaki.Name = "txtSrchMuzzaki";
-            this.txtSrchMuzzaki.Size = new System.Drawing.Size(400, 31);
-            this.txtSrchMuzzaki.TabIndex = 10;
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 395);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(986, 64);
+            this.panel1.TabIndex = 2;
             // 
-            // MuzakiForm
+            // AmilForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1004, 506);
+            this.ClientSize = new System.Drawing.Size(986, 459);
             this.Controls.Add(this.dgvMuzzaki);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MuzakiForm";
+            this.Name = "AmilForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MuzakiForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Text = "AmilForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMuzzaki)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2CircleButton btnAdd;
         private System.Windows.Forms.DataGridView dgvMuzzaki;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -285,6 +269,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewImageColumn Column10;
         private System.Windows.Forms.DataGridViewImageColumn Column11;
-        private System.Windows.Forms.TextBox txtSrchMuzzaki;
+        private System.Windows.Forms.Panel panel1;
     }
 }
