@@ -54,6 +54,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.CmbNominal = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
+            this.lblIdMuzzaki = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -208,6 +211,7 @@
             this.txtHpMuzzaki.Name = "txtHpMuzzaki";
             this.txtHpMuzzaki.Size = new System.Drawing.Size(300, 31);
             this.txtHpMuzzaki.TabIndex = 11;
+            this.txtHpMuzzaki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHpMuzzaki_KeyPress);
             // 
             // txtEmailMuzzaki
             // 
@@ -228,6 +232,7 @@
             this.txtJumlah.Name = "txtJumlah";
             this.txtJumlah.Size = new System.Drawing.Size(300, 31);
             this.txtJumlah.TabIndex = 13;
+            this.txtJumlah.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJumlah_KeyPress);
             // 
             // dateTimePickerZakat
             // 
@@ -247,8 +252,8 @@
             this.btnInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnInput.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnInput.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInput.ForeColor = System.Drawing.Color.White;
-            this.btnInput.Location = new System.Drawing.Point(743, 663);
+            this.btnInput.ForeColor = System.Drawing.Color.Black;
+            this.btnInput.Location = new System.Drawing.Point(681, 663);
             this.btnInput.Name = "btnInput";
             this.btnInput.Size = new System.Drawing.Size(125, 45);
             this.btnInput.TabIndex = 16;
@@ -349,10 +354,57 @@
             this.label12.Text = "Nominal :";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEdit.FillColor = System.Drawing.Color.Khaki;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.Black;
+            this.btnEdit.Location = new System.Drawing.Point(812, 663);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(125, 45);
+            this.btnEdit.TabIndex = 25;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClear.FillColor = System.Drawing.Color.Salmon;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Location = new System.Drawing.Point(943, 663);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(125, 45);
+            this.btnClear.TabIndex = 26;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // lblIdMuzzaki
+            // 
+            this.lblIdMuzzaki.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblIdMuzzaki.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdMuzzaki.Location = new System.Drawing.Point(7, 678);
+            this.lblIdMuzzaki.Name = "lblIdMuzzaki";
+            this.lblIdMuzzaki.Size = new System.Drawing.Size(235, 30);
+            this.lblIdMuzzaki.TabIndex = 27;
+            this.lblIdMuzzaki.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // MuzzakiModule
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1080, 720);
+            this.Controls.Add(this.lblIdMuzzaki);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.CmbNominal);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -403,20 +455,23 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtNamaMuzzaki;
-        private System.Windows.Forms.TextBox txtAlamatMuzzaki;
-        private System.Windows.Forms.TextBox txtHpMuzzaki;
-        private System.Windows.Forms.TextBox txtEmailMuzzaki;
-        private System.Windows.Forms.TextBox txtJumlah;
-        private System.Windows.Forms.DateTimePicker dateTimePickerZakat;
-        private Guna.UI2.WinForms.Guna2Button btnInput;
-        private System.Windows.Forms.ComboBox CmbJenis;
-        private System.Windows.Forms.ComboBox CmbMetodeBayar;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox CmbNominal;
         private System.Windows.Forms.Label label12;
+        public Guna.UI2.WinForms.Guna2Button btnEdit;
+        public Guna.UI2.WinForms.Guna2Button btnInput;
+        public System.Windows.Forms.TextBox txtNamaMuzzaki;
+        public System.Windows.Forms.TextBox txtAlamatMuzzaki;
+        public System.Windows.Forms.TextBox txtHpMuzzaki;
+        public System.Windows.Forms.TextBox txtEmailMuzzaki;
+        public System.Windows.Forms.TextBox txtJumlah;
+        public System.Windows.Forms.DateTimePicker dateTimePickerZakat;
+        public System.Windows.Forms.ComboBox CmbJenis;
+        public System.Windows.Forms.ComboBox CmbMetodeBayar;
+        public System.Windows.Forms.ComboBox CmbNominal;
+        public System.Windows.Forms.Label lblIdMuzzaki;
+        public Guna.UI2.WinForms.Guna2Button btnClear;
     }
 }
