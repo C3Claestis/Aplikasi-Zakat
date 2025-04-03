@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MuzakiForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSrchMuzzaki = new System.Windows.Forms.TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
             this.dgvMuzzaki = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +47,7 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtSrchMuzzaki = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMuzzaki)).BeginInit();
             this.SuspendLayout();
@@ -62,17 +62,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1004, 64);
             this.panel1.TabIndex = 0;
-            // 
-            // txtSrchMuzzaki
-            // 
-            this.txtSrchMuzzaki.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSrchMuzzaki.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSrchMuzzaki.Location = new System.Drawing.Point(228, 21);
-            this.txtSrchMuzzaki.Name = "txtSrchMuzzaki";
-            this.txtSrchMuzzaki.Size = new System.Drawing.Size(400, 31);
-            this.txtSrchMuzzaki.TabIndex = 10;
-            this.txtSrchMuzzaki.TextChanged += new System.EventHandler(this.txtSrchMuzzaki_TextChanged);
             // 
             // btnAdd
             // 
@@ -106,13 +95,13 @@
             this.dgvMuzzaki.AllowUserToResizeRows = false;
             this.dgvMuzzaki.BackgroundColor = System.Drawing.Color.White;
             this.dgvMuzzaki.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.MediumAquamarine;
-            this.dgvMuzzaki.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.MediumAquamarine;
+            this.dgvMuzzaki.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMuzzaki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMuzzaki.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -127,26 +116,26 @@
             this.Column9,
             this.Edit,
             this.Delete});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.MediumAquamarine;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMuzzaki.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMuzzaki.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvMuzzaki.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMuzzaki.EnableHeadersVisualStyles = false;
             this.dgvMuzzaki.Location = new System.Drawing.Point(0, 0);
             this.dgvMuzzaki.Name = "dgvMuzzaki";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMuzzaki.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMuzzaki.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvMuzzaki.RowHeadersVisible = false;
             this.dgvMuzzaki.RowHeadersWidth = 51;
             this.dgvMuzzaki.RowTemplate.Height = 24;
@@ -253,6 +242,28 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 68;
             // 
+            // txtSrchMuzzaki
+            // 
+            this.txtSrchMuzzaki.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtSrchMuzzaki.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSrchMuzzaki.DefaultText = "";
+            this.txtSrchMuzzaki.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSrchMuzzaki.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSrchMuzzaki.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchMuzzaki.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchMuzzaki.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchMuzzaki.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSrchMuzzaki.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchMuzzaki.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSrchMuzzaki.IconLeft")));
+            this.txtSrchMuzzaki.Location = new System.Drawing.Point(225, 21);
+            this.txtSrchMuzzaki.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSrchMuzzaki.Name = "txtSrchMuzzaki";
+            this.txtSrchMuzzaki.PlaceholderText = "";
+            this.txtSrchMuzzaki.SelectedText = "";
+            this.txtSrchMuzzaki.Size = new System.Drawing.Size(400, 31);
+            this.txtSrchMuzzaki.TabIndex = 2;
+            this.txtSrchMuzzaki.TextChanged += new System.EventHandler(this.txtSrchMuzzaki_TextChanged_1);
+            // 
             // MuzakiForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -265,7 +276,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MuzakiForm";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMuzzaki)).EndInit();
             this.ResumeLayout(false);
 
@@ -276,7 +286,6 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2CircleButton btnAdd;
         private System.Windows.Forms.DataGridView dgvMuzzaki;
-        private System.Windows.Forms.TextBox txtSrchMuzzaki;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -289,5 +298,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private Guna.UI2.WinForms.Guna2TextBox txtSrchMuzzaki;
     }
 }

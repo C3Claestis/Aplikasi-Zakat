@@ -271,7 +271,7 @@
             "Fidyah"});
             this.CmbJenis.Location = new System.Drawing.Point(302, 454);
             this.CmbJenis.Name = "CmbJenis";
-            this.CmbJenis.Size = new System.Drawing.Size(300, 33);
+            this.CmbJenis.Size = new System.Drawing.Size(142, 33);
             this.CmbJenis.TabIndex = 17;
             // 
             // CmbMetodeBayar
@@ -282,7 +282,7 @@
             "Transfer"});
             this.CmbMetodeBayar.Location = new System.Drawing.Point(302, 550);
             this.CmbMetodeBayar.Name = "CmbMetodeBayar";
-            this.CmbMetodeBayar.Size = new System.Drawing.Size(300, 33);
+            this.CmbMetodeBayar.Size = new System.Drawing.Size(142, 33);
             this.CmbMetodeBayar.TabIndex = 18;
             // 
             // guna2CirclePictureBox1

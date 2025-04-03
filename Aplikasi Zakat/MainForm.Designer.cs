@@ -321,6 +321,7 @@
             this.btnMustahiq.Size = new System.Drawing.Size(240, 45);
             this.btnMustahiq.TabIndex = 7;
             this.btnMustahiq.Text = "Mustahiq";
+            this.btnMustahiq.Click += new System.EventHandler(this.btnMustahiq_Click);
             // 
             // panel6
             // 

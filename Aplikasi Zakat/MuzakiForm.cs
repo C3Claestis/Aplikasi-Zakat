@@ -59,11 +59,6 @@ namespace Aplikasi_Zakat
             conn.Close();
         }
 
-        private void txtSrchMuzzaki_TextChanged(object sender, EventArgs e)
-        {
-            ShowData();
-        }
-
         private void dgvMuzzaki_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colname = dgvMuzzaki.Columns[e.ColumnIndex].Name;
@@ -100,6 +95,11 @@ namespace Aplikasi_Zakat
                 }
             }
 
+            ShowData();
+        }
+
+        private void txtSrchMuzzaki_TextChanged_1(object sender, EventArgs e)
+        {
             ShowData();
         }
     }

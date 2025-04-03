@@ -23,6 +23,11 @@ namespace Aplikasi_Zakat
             openChildForm(new MuzakiForm(), "Data Muzaki");
         }
 
+        private void btnMustahiq_Click(object sender, EventArgs e)
+        {
+            openChildForm(new MustahiqForm(), "Data Mustahiq");
+        }
+
         #region METHODS
         private void openChildForm(Form childForm, string form)
         {
@@ -41,6 +46,6 @@ namespace Aplikasi_Zakat
             childForm.Show();
         }
 
-        #endregion METHODS   
+        #endregion METHODS     
     }
 }

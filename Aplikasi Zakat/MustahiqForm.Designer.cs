@@ -33,9 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MustahiqForm));
             this.dgvMustahiq = new System.Windows.Forms.DataGridView();
-            this.txtSrchMustahiq = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +44,9 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.txtSrchMustahiq = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMustahiq)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -103,51 +103,7 @@
             this.dgvMustahiq.RowTemplate.Height = 24;
             this.dgvMustahiq.Size = new System.Drawing.Size(1004, 442);
             this.dgvMustahiq.TabIndex = 3;
-            // 
-            // txtSrchMustahiq
-            // 
-            this.txtSrchMustahiq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSrchMustahiq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSrchMustahiq.Location = new System.Drawing.Point(228, 21);
-            this.txtSrchMustahiq.Name = "txtSrchMustahiq";
-            this.txtSrchMustahiq.Size = new System.Drawing.Size(400, 31);
-            this.txtSrchMustahiq.TabIndex = 10;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.txtSrchMustahiq);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 442);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1004, 64);
-            this.panel1.TabIndex = 2;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.FillColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAdd.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAdd.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnAdd.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnAdd.Location = new System.Drawing.Point(942, 8);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.PressedColor = System.Drawing.Color.Transparent;
-            this.btnAdd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnAdd.Size = new System.Drawing.Size(50, 50);
-            this.btnAdd.TabIndex = 0;
+            this.dgvMustahiq.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMustahiq_CellContentClick);
             // 
             // Column1
             // 
@@ -239,6 +195,64 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 68;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.txtSrchMustahiq);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 442);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1004, 64);
+            this.panel1.TabIndex = 2;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdd.FillColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAdd.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAdd.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAdd.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnAdd.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnAdd.Location = new System.Drawing.Point(942, 8);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.PressedColor = System.Drawing.Color.Transparent;
+            this.btnAdd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnAdd.Size = new System.Drawing.Size(50, 50);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtSrchMustahiq
+            // 
+            this.txtSrchMustahiq.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtSrchMustahiq.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSrchMustahiq.DefaultText = "";
+            this.txtSrchMustahiq.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSrchMustahiq.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSrchMustahiq.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchMustahiq.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchMustahiq.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchMustahiq.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSrchMustahiq.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchMustahiq.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSrchMustahiq.IconLeft")));
+            this.txtSrchMustahiq.Location = new System.Drawing.Point(225, 21);
+            this.txtSrchMustahiq.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSrchMustahiq.Name = "txtSrchMustahiq";
+            this.txtSrchMustahiq.PlaceholderText = "";
+            this.txtSrchMustahiq.SelectedText = "";
+            this.txtSrchMustahiq.Size = new System.Drawing.Size(400, 31);
+            this.txtSrchMustahiq.TabIndex = 12;
+            this.txtSrchMustahiq.TextChanged += new System.EventHandler(this.txtSrchMustahiq_TextChanged_1);
+            // 
             // MustahiqForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -252,7 +266,6 @@
             this.Text = "MustahiqForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMustahiq)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -260,7 +273,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvMustahiq;
-        private System.Windows.Forms.TextBox txtSrchMustahiq;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2CircleButton btnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -274,5 +286,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private Guna.UI2.WinForms.Guna2TextBox txtSrchMustahiq;
     }
 }

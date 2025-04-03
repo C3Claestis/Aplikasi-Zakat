@@ -88,6 +88,12 @@
     <Compile Include="MustahiqForm.Designer.cs">
       <DependentUpon>MustahiqForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MustahiqModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MustahiqModule.Designer.cs">
+      <DependentUpon>MustahiqModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="MuzakiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MustahiqForm.resx">
       <DependentUpon>MustahiqForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MustahiqModule.resx">
+      <DependentUpon>MustahiqModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MuzakiForm.resx">
       <DependentUpon>MuzakiForm.cs</DependentUpon>
