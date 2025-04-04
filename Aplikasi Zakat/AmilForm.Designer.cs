@@ -33,21 +33,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.dgvMuzzaki = new System.Windows.Forms.DataGridView();
+            this.dgvAmil = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMuzzaki)).BeginInit();
+            this.txtSrchAmil = new Guna.UI2.WinForms.Guna2TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAmil)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,32 +74,32 @@
             this.btnAdd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnAdd.Size = new System.Drawing.Size(50, 50);
             this.btnAdd.TabIndex = 0;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dgvMuzzaki
+            // dgvAmil
             // 
-            this.dgvMuzzaki.AllowUserToResizeColumns = false;
-            this.dgvMuzzaki.AllowUserToResizeRows = false;
-            this.dgvMuzzaki.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMuzzaki.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAmil.AllowUserToResizeColumns = false;
+            this.dgvAmil.AllowUserToResizeRows = false;
+            this.dgvAmil.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAmil.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.MediumAquamarine;
-            this.dgvMuzzaki.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMuzzaki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMuzzaki.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvAmil.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAmil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAmil.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
             this.Column4,
+            this.Column3,
             this.Column5,
             this.Column6,
             this.Column7,
             this.Column12,
             this.Column8,
-            this.Column9,
             this.Column10,
             this.Column11});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -109,11 +109,11 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.MediumAquamarine;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMuzzaki.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMuzzaki.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMuzzaki.EnableHeadersVisualStyles = false;
-            this.dgvMuzzaki.Location = new System.Drawing.Point(0, 0);
-            this.dgvMuzzaki.Name = "dgvMuzzaki";
+            this.dgvAmil.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAmil.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAmil.EnableHeadersVisualStyles = false;
+            this.dgvAmil.Location = new System.Drawing.Point(0, 0);
+            this.dgvAmil.Name = "dgvAmil";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,36 +121,40 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMuzzaki.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvMuzzaki.RowHeadersVisible = false;
-            this.dgvMuzzaki.RowHeadersWidth = 51;
-            this.dgvMuzzaki.RowTemplate.Height = 24;
-            this.dgvMuzzaki.Size = new System.Drawing.Size(986, 395);
-            this.dgvMuzzaki.TabIndex = 3;
+            this.dgvAmil.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAmil.RowHeadersVisible = false;
+            this.dgvAmil.RowHeadersWidth = 51;
+            this.dgvAmil.RowTemplate.Height = 24;
+            this.dgvAmil.Size = new System.Drawing.Size(986, 395);
+            this.dgvAmil.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.txtSrchAmil);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 395);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(986, 64);
+            this.panel1.TabIndex = 2;
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "No";
+            this.Column1.HeaderText = "Id";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 65;
+            this.Column1.Width = 57;
             // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.HeaderText = "Nama Muzzaki";
+            this.Column2.HeaderText = "Nama Amil";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.Width = 157;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Alamat";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
+            this.Column2.Width = 129;
             // 
             // Column4
             // 
@@ -161,53 +165,52 @@
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column4.Width = 94;
             // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Alamat";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column5.HeaderText = "Email";
+            this.Column5.HeaderText = "Jabatan";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 83;
+            this.Column5.Width = 101;
             // 
             // Column6
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column6.HeaderText = "Jenis Zakat";
+            this.Column6.HeaderText = "Username";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 126;
+            this.Column6.Width = 120;
             // 
             // Column7
             // 
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column7.HeaderText = "Jumlah Zakat";
+            this.Column7.HeaderText = "Password";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
-            this.Column7.Width = 144;
+            this.Column7.Width = 116;
             // 
             // Column12
             // 
             this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column12.HeaderText = "Nominal";
+            this.Column12.HeaderText = "Tanggal Bergabung";
             this.Column12.MinimumWidth = 6;
             this.Column12.Name = "Column12";
-            this.Column12.Width = 108;
+            this.Column12.Width = 194;
             // 
             // Column8
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column8.HeaderText = "Metode Pembayaran";
+            this.Column8.HeaderText = "Status";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
-            this.Column8.Width = 205;
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column9.HeaderText = "Tanggal Zakat";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 150;
+            this.Column8.Width = 89;
             // 
             // Column10
             // 
@@ -227,27 +230,38 @@
             this.Column11.Name = "Column11";
             this.Column11.Width = 68;
             // 
-            // panel1
+            // txtSrchAmil
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 395);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(986, 64);
-            this.panel1.TabIndex = 2;
+            this.txtSrchAmil.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtSrchAmil.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSrchAmil.DefaultText = "";
+            this.txtSrchAmil.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSrchAmil.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSrchAmil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchAmil.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchAmil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchAmil.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSrchAmil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchAmil.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSrchAmil.IconLeft")));
+            this.txtSrchAmil.Location = new System.Drawing.Point(293, 17);
+            this.txtSrchAmil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSrchAmil.Name = "txtSrchAmil";
+            this.txtSrchAmil.PlaceholderText = "";
+            this.txtSrchAmil.SelectedText = "";
+            this.txtSrchAmil.Size = new System.Drawing.Size(400, 31);
+            this.txtSrchAmil.TabIndex = 13;
             // 
             // AmilForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(986, 459);
-            this.Controls.Add(this.dgvMuzzaki);
+            this.Controls.Add(this.dgvAmil);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AmilForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AmilForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMuzzaki)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAmil)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -256,19 +270,19 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2CircleButton btnAdd;
-        private System.Windows.Forms.DataGridView dgvMuzzaki;
+        private System.Windows.Forms.DataGridView dgvAmil;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewImageColumn Column10;
         private System.Windows.Forms.DataGridViewImageColumn Column11;
-        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2TextBox txtSrchAmil;
     }
 }

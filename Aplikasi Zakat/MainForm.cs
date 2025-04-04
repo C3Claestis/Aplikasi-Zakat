@@ -27,6 +27,10 @@ namespace Aplikasi_Zakat
         {
             openChildForm(new MustahiqForm(), "Data Mustahiq");
         }
+        private void btnAmil_Click(object sender, EventArgs e)
+        {
+            openChildForm(new AmilForm(), "Data Amil");
+        }
 
         #region METHODS
         private void openChildForm(Form childForm, string form)
@@ -46,6 +50,6 @@ namespace Aplikasi_Zakat
             childForm.Show();
         }
 
-        #endregion METHODS     
+        #endregion METHODS             
     }
 }

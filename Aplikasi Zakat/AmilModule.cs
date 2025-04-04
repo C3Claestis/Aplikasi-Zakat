@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace Aplikasi_Zakat
 {
-    public partial class AmilForm: Form
+    public partial class AmilModule: Form
     {
-        public AmilForm()
+        public AmilModule()
         {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            AmilModule amilModule = new AmilModule();
-            amilModule.ShowDialog();
+            this.Dispose();
         }
     }
 }

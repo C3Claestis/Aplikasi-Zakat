@@ -76,6 +76,12 @@
     <Compile Include="AmilForm.Designer.cs">
       <DependentUpon>AmilForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AmilModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AmilModule.Designer.cs">
+      <DependentUpon>AmilModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AmilForm.resx">
       <DependentUpon>AmilForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AmilModule.resx">
+      <DependentUpon>AmilModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

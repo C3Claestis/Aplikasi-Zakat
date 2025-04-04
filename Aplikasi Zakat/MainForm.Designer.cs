@@ -267,6 +267,7 @@
             this.btnAmil.Size = new System.Drawing.Size(240, 45);
             this.btnAmil.TabIndex = 11;
             this.btnAmil.Text = "Amil";
+            this.btnAmil.Click += new System.EventHandler(this.btnAmil_Click);
             // 
             // panel8
             // 
