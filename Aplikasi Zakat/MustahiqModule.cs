@@ -64,12 +64,49 @@ namespace Aplikasi_Zakat
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (MessageBox.Show("Ingin Update data ini?", "Update Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cmd = new SqlCommand("UPDATE tbMustahiq SET Nama = @Name, Alamat = @Address, NoHp = @Phone, Jenis = @Jenis, Keterangan = @Keterangan, Tanggal = @Tanggal, Jumlah = @Jumlah, Status = @Status WHERE Id LIKE '" + lblIdMustahiq.Text + "' ", conn);
+                    cmd.Parameters.AddWithValue("@Name", txtNamaMustahiq.Text);
+                    cmd.Parameters.AddWithValue("@Address", txtAlamatMustahiq.Text);
+                    cmd.Parameters.AddWithValue("@Phone", txtHpMustahiq.Text);                    
+                    cmd.Parameters.AddWithValue("@Jenis", CmbJenis.Text);
+                    cmd.Parameters.AddWithValue("@Keterangan", txtKeterangan.Text);
+                    cmd.Parameters.AddWithValue("@Tanggal", Convert.ToDateTime(dateTimePickerZakat.Text));
+                    cmd.Parameters.AddWithValue("@Jumlah", Convert.ToDecimal(txtJumlah.Text));                    
+                    cmd.Parameters.AddWithValue("@Status", CmbStatus.Text);
+                    
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Data updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            Clear();
 
+            btnInput.Enabled = true;
+            btnEdit.Enabled = false;
+        }
+        public void Clear()
+        {
+            txtNamaMustahiq.Clear();
+            txtAlamatMustahiq.Clear();
+            txtKeterangan.Clear();
+            txtHpMustahiq.Clear();
+            txtJumlah.Clear();
+            CmbJenis.Text = "";
+            CmbStatus.Text = "";            
         }
     }
 }

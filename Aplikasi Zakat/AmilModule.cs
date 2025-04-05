@@ -64,12 +64,50 @@ namespace Aplikasi_Zakat
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (MessageBox.Show("Ingin Update data ini?", "Update Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cmd = new SqlCommand("UPDATE tbAmil SET Nama = @Name, NoHp = @Phone, Alamat = @Address, Jabatan = @Jabatan, Username = @Username, Password = @Password, TanggalBergabung = @TanggalBergabung, Status = @Status WHERE Id LIKE '" + lblIdAmil.Text + "' ", conn);
+                    cmd.Parameters.AddWithValue("@Name", txtNamaAmil.Text);
+                    cmd.Parameters.AddWithValue("@Phone", txtNoHpAmil.Text);
+                    cmd.Parameters.AddWithValue("@Address", txtAlamatAmil.Text);                    
+                    cmd.Parameters.AddWithValue("@Jabatan", CmbJabatan.Text);
+                    cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
+                    cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                    cmd.Parameters.AddWithValue("@TanggalBergabung", Convert.ToDateTime(dateTimePickerZakat.Text));                    
+                    cmd.Parameters.AddWithValue("@Status", CmbStatus.Text);
 
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Data updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            Clear();
 
+            btnInput.Enabled = true;
+            btnEdit.Enabled = false;
+        }
+
+        public void Clear()
+        {
+            txtNamaAmil.Clear();
+            txtAlamatAmil.Clear();
+            txtNoHpAmil.Clear();
+            txtUsername.Clear();
+            txtPassword.Clear();
+            CmbJabatan.Text = "";
+            CmbStatus.Text = "";
         }
     }
 }

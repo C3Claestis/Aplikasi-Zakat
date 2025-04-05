@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
             this.dgvAmil = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSrchAmil = new Guna.UI2.WinForms.Guna2TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,10 +45,8 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSrchAmil = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAmil)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.btnAdd.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnAdd.Location = new System.Drawing.Point(924, 8);
+            this.btnAdd.Location = new System.Drawing.Point(942, 8);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.Transparent;
             this.btnAdd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -101,8 +101,8 @@
             this.Column7,
             this.Column12,
             this.Column8,
-            this.Column10,
-            this.Column11});
+            this.Edit,
+            this.Delete});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,9 +126,42 @@
             this.dgvAmil.RowHeadersVisible = false;
             this.dgvAmil.RowHeadersWidth = 51;
             this.dgvAmil.RowTemplate.Height = 24;
-            this.dgvAmil.Size = new System.Drawing.Size(986, 395);
+            this.dgvAmil.Size = new System.Drawing.Size(1004, 442);
             this.dgvAmil.TabIndex = 3;
             this.dgvAmil.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAmil_CellContentClick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.txtSrchAmil);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 442);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1004, 64);
+            this.panel1.TabIndex = 2;
+            // 
+            // txtSrchAmil
+            // 
+            this.txtSrchAmil.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtSrchAmil.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSrchAmil.DefaultText = "";
+            this.txtSrchAmil.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSrchAmil.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSrchAmil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchAmil.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchAmil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchAmil.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSrchAmil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchAmil.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSrchAmil.IconLeft")));
+            this.txtSrchAmil.Location = new System.Drawing.Point(302, 17);
+            this.txtSrchAmil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSrchAmil.Name = "txtSrchAmil";
+            this.txtSrchAmil.PlaceholderText = "";
+            this.txtSrchAmil.SelectedText = "";
+            this.txtSrchAmil.Size = new System.Drawing.Size(400, 31);
+            this.txtSrchAmil.TabIndex = 13;
+            this.txtSrchAmil.TextChanged += new System.EventHandler(this.txtSrchAmil_TextChanged);
             // 
             // Column1
             // 
@@ -203,61 +236,30 @@
             this.Column8.Name = "Column8";
             this.Column8.Width = 89;
             // 
-            // Column10
+            // Edit
             // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column10.HeaderText = "Edit";
-            this.Column10.Image = ((System.Drawing.Image)(resources.GetObject("Column10.Image")));
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 48;
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Edit.Width = 71;
             // 
-            // Column11
+            // Delete
             // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column11.HeaderText = "Delete";
-            this.Column11.Image = ((System.Drawing.Image)(resources.GetObject("Column11.Image")));
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 68;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.txtSrchAmil);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 395);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(986, 64);
-            this.panel1.TabIndex = 2;
-            // 
-            // txtSrchAmil
-            // 
-            this.txtSrchAmil.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtSrchAmil.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSrchAmil.DefaultText = "";
-            this.txtSrchAmil.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSrchAmil.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSrchAmil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSrchAmil.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSrchAmil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSrchAmil.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSrchAmil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSrchAmil.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSrchAmil.IconLeft")));
-            this.txtSrchAmil.Location = new System.Drawing.Point(293, 17);
-            this.txtSrchAmil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSrchAmil.Name = "txtSrchAmil";
-            this.txtSrchAmil.PlaceholderText = "";
-            this.txtSrchAmil.SelectedText = "";
-            this.txtSrchAmil.Size = new System.Drawing.Size(400, 31);
-            this.txtSrchAmil.TabIndex = 13;
-            this.txtSrchAmil.TextChanged += new System.EventHandler(this.txtSrchAmil_TextChanged);
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Width = 68;
             // 
             // AmilForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(986, 459);
+            this.ClientSize = new System.Drawing.Size(1004, 506);
             this.Controls.Add(this.dgvAmil);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -275,6 +277,7 @@
         private Guna.UI2.WinForms.Guna2CircleButton btnAdd;
         private System.Windows.Forms.DataGridView dgvAmil;
         private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2TextBox txtSrchAmil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
@@ -284,8 +287,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewImageColumn Column10;
-        private System.Windows.Forms.DataGridViewImageColumn Column11;
-        private Guna.UI2.WinForms.Guna2TextBox txtSrchAmil;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }
