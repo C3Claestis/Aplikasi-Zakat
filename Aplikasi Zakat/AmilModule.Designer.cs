@@ -44,7 +44,7 @@
             this.dateTimePickerZakat = new System.Windows.Forms.DateTimePicker();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtNoHpAmil = new System.Windows.Forms.TextBox();
-            this.txtNamaMustahiq = new System.Windows.Forms.TextBox();
+            this.txtNamaAmil = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -118,6 +118,7 @@
             this.btnClear.Size = new System.Drawing.Size(125, 45);
             this.btnClear.TabIndex = 79;
             this.btnClear.Text = "CLEAR";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnEdit
             // 
@@ -134,6 +135,7 @@
             this.btnEdit.Size = new System.Drawing.Size(125, 45);
             this.btnEdit.TabIndex = 78;
             this.btnEdit.Text = "EDIT";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // label11
             // 
@@ -193,11 +195,11 @@
             // 
             this.CmbJabatan.FormattingEnabled = true;
             this.CmbJabatan.Items.AddRange(new object[] {
-            "Fakir",
-            "Miskin",
-            "Amil",
-            "Gharimin",
-            "Ibnu Sabil"});
+            "Ketua",
+            "Wakil Ketua",
+            "Bendahara",
+            "Sekretaris",
+            "Petugas Lapangan"});
             this.CmbJabatan.Location = new System.Drawing.Point(302, 422);
             this.CmbJabatan.Name = "CmbJabatan";
             this.CmbJabatan.Size = new System.Drawing.Size(142, 33);
@@ -218,6 +220,7 @@
             this.btnInput.Size = new System.Drawing.Size(125, 45);
             this.btnInput.TabIndex = 71;
             this.btnInput.Text = "INPUT";
+            this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
             // 
             // dateTimePickerZakat
             // 
@@ -248,15 +251,15 @@
             this.txtNoHpAmil.Size = new System.Drawing.Size(300, 31);
             this.txtNoHpAmil.TabIndex = 67;
             // 
-            // txtNamaMustahiq
+            // txtNamaAmil
             // 
-            this.txtNamaMustahiq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNamaAmil.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNamaMustahiq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNamaMustahiq.Location = new System.Drawing.Point(302, 272);
-            this.txtNamaMustahiq.Name = "txtNamaMustahiq";
-            this.txtNamaMustahiq.Size = new System.Drawing.Size(400, 31);
-            this.txtNamaMustahiq.TabIndex = 66;
+            this.txtNamaAmil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNamaAmil.Location = new System.Drawing.Point(302, 272);
+            this.txtNamaAmil.Name = "txtNamaAmil";
+            this.txtNamaAmil.Size = new System.Drawing.Size(400, 31);
+            this.txtNamaAmil.TabIndex = 66;
             // 
             // label8
             // 
@@ -396,7 +399,7 @@
             this.Controls.Add(this.dateTimePickerZakat);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtNoHpAmil);
-            this.Controls.Add(this.txtNamaMustahiq);
+            this.Controls.Add(this.txtNamaAmil);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -435,7 +438,7 @@
         public System.Windows.Forms.DateTimePicker dateTimePickerZakat;
         public System.Windows.Forms.TextBox txtUsername;
         public System.Windows.Forms.TextBox txtNoHpAmil;
-        public System.Windows.Forms.TextBox txtNamaMustahiq;
+        public System.Windows.Forms.TextBox txtNamaAmil;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

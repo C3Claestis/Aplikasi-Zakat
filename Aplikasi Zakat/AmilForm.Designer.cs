@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
             this.dgvAmil = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.txtSrchAmil = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAmil)).BeginInit();
             this.panel1.SuspendLayout();
@@ -78,6 +78,7 @@
             // 
             // dgvAmil
             // 
+            this.dgvAmil.AllowUserToAddRows = false;
             this.dgvAmil.AllowUserToResizeColumns = false;
             this.dgvAmil.AllowUserToResizeRows = false;
             this.dgvAmil.BackgroundColor = System.Drawing.Color.White;
@@ -127,17 +128,7 @@
             this.dgvAmil.RowTemplate.Height = 24;
             this.dgvAmil.Size = new System.Drawing.Size(986, 395);
             this.dgvAmil.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.txtSrchAmil);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 395);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(986, 64);
-            this.panel1.TabIndex = 2;
+            this.dgvAmil.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAmil_CellContentClick);
             // 
             // Column1
             // 
@@ -230,6 +221,17 @@
             this.Column11.Name = "Column11";
             this.Column11.Width = 68;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.txtSrchAmil);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 395);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(986, 64);
+            this.panel1.TabIndex = 2;
+            // 
             // txtSrchAmil
             // 
             this.txtSrchAmil.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -250,6 +252,7 @@
             this.txtSrchAmil.SelectedText = "";
             this.txtSrchAmil.Size = new System.Drawing.Size(400, 31);
             this.txtSrchAmil.TabIndex = 13;
+            this.txtSrchAmil.TextChanged += new System.EventHandler(this.txtSrchAmil_TextChanged);
             // 
             // AmilForm
             // 
