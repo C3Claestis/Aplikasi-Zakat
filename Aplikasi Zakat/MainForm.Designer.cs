@@ -295,6 +295,7 @@
             this.btnTransaksi.Size = new System.Drawing.Size(240, 45);
             this.btnTransaksi.TabIndex = 9;
             this.btnTransaksi.Text = "Transaksi";
+            this.btnTransaksi.Click += new System.EventHandler(this.btnTransaksi_Click);
             // 
             // panel7
             // 
@@ -349,7 +350,7 @@
             this.btnMuzaki.Name = "btnMuzaki";
             this.btnMuzaki.Size = new System.Drawing.Size(240, 45);
             this.btnMuzaki.TabIndex = 5;
-            this.btnMuzaki.Text = "Muzaki";
+            this.btnMuzaki.Text = "Muzzaki";
             this.btnMuzaki.Click += new System.EventHandler(this.btnMuzaki_Click);
             // 
             // panel5
@@ -378,6 +379,7 @@
             this.btnDashboard.Size = new System.Drawing.Size(240, 45);
             this.btnDashboard.TabIndex = 3;
             this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // panel4
             // 
@@ -458,7 +460,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

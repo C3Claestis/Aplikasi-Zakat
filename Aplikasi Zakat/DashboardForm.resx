@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA+BJREFUaEPt
+        mN9LFFEUx/0T/A/yT/A/SLhryVhkKCmYPzBpdTVb15K2JH2wNEzutpEmWrpWRoGtYIEhoQ/mWhYr9KLs
+        g0KghMguLTjVBhNnm7Ndr7szd52RHdMvfF/meJzz2bn3zJ2TlaXK55A6fA5JOSh+0ngqD2vfIQDxXzsX
+        3RjvUqxuXZDJtvKwMjekWN1pgWxN9iobr7ot4+iUd28gUx2Vu9ZlJr3U32IIpIP/u0zI55Bmj0BSgaza
+        7aX8NdTH/PzcX5Tm8tdFFSwqyv7a1CTx100HCdhss8sVFTMypTPsdTWWFyBEkSkFJ7+JhgBinpDwN7c7
+        KFO6476mgizYbE4oVAVRflDqZPMDhEQQZJvSMBsT0bzNNgH5KojCPllTQQKELLEgMqWzGPtASBHEmCeS
+        1lOBp4H5CMI+FcMgd90u+Wr3ozAYbzRrb4xhsRgbqW2SeZC3PX2JXD33tN6KYv6X6zd/Q/5yrzeG8b7m
+        ipghEO8N12q79/kMeO5kQQxu9N7eEIYbfaeeGMaeOq6EeJB3nsEQxvXsaaeLmL/c1h6F/BX6YBPjg66K
+        sCEQdmnhGsaltU3pBMagW/Eg6XYv3GO4tNg9aHhpsSC4DxDkJ6VFbD7uIRVyiY2JaJ4QDwMSkSnNwZip
+        IKCAzdahgux6vwQKCnIChKzJlIITRaQjaO/rra1z/I9kOghovaHhGH8NBd1HoTSbv56Okv3/fQHJhI5A
+        /nsQ6FzLVVV+fjOCYH8sEOKHtpxsn2jl6slUEHhXwKEOuhacpfj3RICQEeY9MszG9HL1ZCoIFsqctUYS
+        sb+tlz9rJVqwVq6IDIM8dNdN3R4Yd4Ln809sQzGfa+tCUEyE3tvC2ERNvZ8HWbg/OCaSK+LHztKQIZBO
+        V6Ny0U3jxkKnL9QnisVYf2V9Io4xf+e/uFauiL1N5eZ9s/PHePYYkuwYz25qrVwRGV5aLAiehZhiPBhj
+        vycQhO1cWrkiMhVELXZNLWaNb7H4BQmF8l+Perl6MhUEBN0pVFPTlepQCDA8BEovV0umg2RKRyCHAkRr
+        QCeilepqKdVmt8SATkTwhbkoSUE4b/EwlhnQ6QkHFACivksSwwuQJQZ0IsKXIoKAMWaZAZ2IXxeXxedi
+        0yVl8QEcuP/OQNRSAzoRvyk9vwn5MyWl8QEceMjjW7TUgE5EuMeYpRVh45YZ0OlJ/fiKMJt9x8HRMgM6
+        EcGPsVhYOJeqUVhmQCcivfxk8X0ByYQMg4w4pOHRS6ePZ9o+hxQ0BAIJVvGeQazswwPysqVYhkdodWuC
+        jDqk6rHLZz69aD4btLqhzmcOKa2x64HRH5uzWQTAWtK9AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="guna2CirclePictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAABK5JREFUaEPt
+        mO+LVFUYxz3n3HHvzM42F0RIglAiIgnUF+GLgrR/QA3Wd2UYFIRgpYGikKFJvlKkH9iLdiHzTS/arSAU
+        cqaWYhaTCRZLtExdfGfu7j+wE59775HjM+fO3N11SuR+4cvAveec5/fznDvLlhUoUKBAgQIFChR4KFEq
+        ldZrrUeUUnWotX4vCIIX5LoHEsaYLanyf2utZtc9EUy8v7M88ea2sLHm0aDJM6VUWyn1dRAEm+T+/xVh
+        GK7WWh9HeWPUTZQ/tafSnK9HbR9//njo8vCmgTpGGWNelef9p4iiKDLG7EjTpo23uynv49iRakspNcNZ
+        8vy+w8n7meWBniZlbo9HN6SS8PBr5Yk730Wz8rnLlZFuaa0PSTl9QZo6u928Jz2kUvCvM7W5d7aXJzGS
+        NPvx5NAFucblsTcqF/seFYqRoiR18BxF+883nR7G63h/zaqgydpqWV9m7Xw9mpFrfWR9X6JijNlqC5ei
+        vHK6Ni2Fw8/erTSfejzAo+1wQP9OmmWt7cZTeys4YEbqsSRQAxyKcsboOSKxcW1pcnjzQJ00wPNWedJn
+        84ZS448vHrkklVsITx8cvKaUui51WRKIBErTUSARgXQlFMeA9U9m10heXv2yNo0ceybdDydKfRYFejoH
+        S6EuV63QUyggn+fl6P7BKRvRNCVvEfVaVV+1Bi258JVSrV3bwoYU7vLzfYNTvYyVdL1P13v26dJk89Oh
+        W3Ldn2dqc2nDaC3aGAocIb6uJIkXDyddqeOdS5qB7WS268k1PqbRqUsdc4Ha6BUNyw9fr1zEu75hJ71P
+        M3A72e3x6CZr5D6XODNtySNSz66w0Rg/Wm398km+IkaQNdzOEeoH7/OLsXLPrpfCBnLyOGxBxqQDL74r
+        4UGng7SNUTdIB1IDD6OEayjPEOQWLgb45sjYB9UWazmfGpPvs4gxyQ0h42KZXjlG8A6tVdYFhUjrfXu4
+        PGmv3SjCXLFKQ94xCO172ZKJFK2a98i5822tQ9luJAXDAX3Ja4i9cmAp6UDOygMg09ZGCaPcdyi05fnl
+        30dD5gLGYLDcT8R4R1R9UepF5LNfa32io4MlX2nJ4cmtM/E2v3iOFID2HV6UAubrUbw/K5of7R48j/F0
+        NumAPCSKa1cHPygVf6tsvccAYIedFAwRSHexRvkUtEIeW2niVIFExDoFR1gD87ZZSZyY1mmD9Jc2xMgz
+        7MhxFMxqjyiOwqQKxn91qDphf60jiIjc14vIS+cNqfSW1P0usK6bgi5R9MUNpQ6DGYDx7OhSsAdeDs8R
+        Ed98yeCsrSWt9WhHLUhQGyjoOaiDKEyKyOdxc8iRMux97pnSOflc0jYTpdRvuf6EoDaw2JfzPpI2RM/1
+        Kk6geOVaH+3+rOjzHGN7ppEEX162U6EQoeQO1G2CMxPwmCM0LkS5LovI8WTALC07aSg50kiCDYQuiQxG
+        6VG6gu080J3gB18Jz1LUGJO+j50gle1GGZWfTlZ/ZbCRRvftm8MFTcA1Uik1lhoJx9KvxXsMhlxLMJqB
+        yrXFl0Y4guJ3onD/v8kXAmuspSey133G2mHbtyj0C67ByW1an/BeLwoUKFCgQIECi8e/VBozC03XgUgA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>"Sesungguhnya zakat-zakat itu hanyalah untuk orang-orang fakir, orang-orang miskin, pengurus zakat, para mu’allaf yang dibujuk hatinya, untuk (memerdekakan) budak, orang-orang yang berutang, untuk jalan Allah dan untuk mereka yang sedang dalam perjalanan, sebagai kewajiban dari Allah. Dan Allah Maha Mengetahui lagi Maha Bijaksana."</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>إِنَّمَا ٱلصَّدَقَـٰتُ لِلْفُقَرَآءِ وَٱلْمَسَـٰكِينِ وَٱلْعَـٰمِلِينَ عَلَيْهَا وَٱلْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِى ٱلرِّقَابِ وَٱلْغَـٰرِمِينَ وَفِى سَبِيلِ ٱللَّهِ وَٱبْنِ ٱلسَّبِيلِۖ فَرِيضَةً مِّنَ ٱللَّهِۗ وَٱللَّهُ عَلِيمٌ حَكِيمٌ</value>
+  </data>
+</root>

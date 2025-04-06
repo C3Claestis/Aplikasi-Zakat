@@ -17,6 +17,10 @@ namespace Aplikasi_Zakat
         {
             InitializeComponent();
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            openChildForm(new DashboardForm(), "Dashboard");
+        }
 
         private void btnMuzaki_Click(object sender, EventArgs e)
         {
@@ -30,6 +34,14 @@ namespace Aplikasi_Zakat
         private void btnAmil_Click(object sender, EventArgs e)
         {
             openChildForm(new AmilForm(), "Data Amil");
+        }
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DashboardForm(), "Dashboard");
+        }
+        private void btnTransaksi_Click(object sender, EventArgs e)
+        {
+            openChildForm(new TransaksiForm(), "Transaksi");
         }
 
         #region METHODS
@@ -50,6 +62,8 @@ namespace Aplikasi_Zakat
             childForm.Show();
         }
 
-        #endregion METHODS             
+        #endregion METHODS                    
+
+       
     }
 }
