@@ -80,7 +80,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1262, 80);
+            this.panel1.Size = new System.Drawing.Size(1902, 80);
             this.panel1.TabIndex = 0;
             // 
             // btnLogout
@@ -92,7 +92,7 @@
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnLogout.ImageRotate = 0F;
-            this.btnLogout.Location = new System.Drawing.Point(1190, 12);
+            this.btnLogout.Location = new System.Drawing.Point(1830, 12);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogout.Size = new System.Drawing.Size(64, 54);
@@ -136,9 +136,9 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 633);
+            this.panel2.Location = new System.Drawing.Point(0, 993);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1262, 40);
+            this.panel2.Size = new System.Drawing.Size(1902, 40);
             this.panel2.TabIndex = 1;
             // 
             // label2
@@ -149,7 +149,7 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(5);
-            this.label2.Size = new System.Drawing.Size(1262, 40);
+            this.label2.Size = new System.Drawing.Size(1902, 40);
             this.label2.TabIndex = 1;
             this.label2.Text = "@ 2025 Zakata V 1.0";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,7 +184,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 80);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(240, 553);
+            this.panel3.Size = new System.Drawing.Size(240, 913);
             this.panel3.TabIndex = 2;
             // 
             // panel11
@@ -421,7 +421,7 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(240, 80);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1022, 553);
+            this.panelMain.Size = new System.Drawing.Size(1662, 913);
             this.panelMain.TabIndex = 3;
             // 
             // panel13
@@ -431,7 +431,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1022, 64);
+            this.panel13.Size = new System.Drawing.Size(1662, 64);
             this.panel13.TabIndex = 0;
             // 
             // labelForm
@@ -441,7 +441,7 @@
             this.labelForm.ForeColor = System.Drawing.Color.White;
             this.labelForm.Location = new System.Drawing.Point(0, 0);
             this.labelForm.Name = "labelForm";
-            this.labelForm.Size = new System.Drawing.Size(1022, 64);
+            this.labelForm.Size = new System.Drawing.Size(1662, 64);
             this.labelForm.TabIndex = 0;
             this.labelForm.Text = "label5";
             this.labelForm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -449,7 +449,7 @@
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -460,6 +460,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();

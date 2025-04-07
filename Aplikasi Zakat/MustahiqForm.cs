@@ -26,7 +26,7 @@ namespace Aplikasi_Zakat
         {
             dgvMustahiq.Rows.Clear();
 
-            cmd = new SqlCommand("SELECT * FROM tbMustahiq WHERE Nama LIKE @search OR Alamat LIKE @search OR NoHp LIKE @search OR Jenis LIKE @search", conn);
+            cmd = new SqlCommand("SELECT * FROM tbMustahiq WHERE NamaMustahiq LIKE @search OR Alamat LIKE @search OR NoHp LIKE @search OR Jenis LIKE @search", conn);
             cmd.Parameters.AddWithValue("@search", "%" + txtSrchMustahiq.Text + "%");
 
             conn.Open();
@@ -88,7 +88,7 @@ namespace Aplikasi_Zakat
             {
                 if (MessageBox.Show("Are you sure you want to delete this data?", "Delete Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cmd = new SqlCommand("DELETE FROM tbMustahiq WHERE Nama = @name", conn);
+                    cmd = new SqlCommand("DELETE FROM tbMustahiq WHERE NamaMustahiq = @name", conn);
                     conn.Open();
                     cmd.Parameters.AddWithValue("@name", dgvMustahiq.Rows[e.RowIndex].Cells[1].Value.ToString());
                     cmd.ExecuteNonQuery();

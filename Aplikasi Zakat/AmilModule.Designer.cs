@@ -250,6 +250,7 @@
             this.txtNoHpAmil.Name = "txtNoHpAmil";
             this.txtNoHpAmil.Size = new System.Drawing.Size(300, 31);
             this.txtNoHpAmil.TabIndex = 67;
+            this.txtNoHpAmil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoHpAmil_KeyPress);
             // 
             // txtNamaAmil
             // 

@@ -38,7 +38,7 @@ namespace Aplikasi_Zakat
                 {
                     if (MessageBox.Show("Are you sure you want to save this data?", "Save Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        cmd = new SqlCommand("INSERT INTO tbMustahiq (Nama, Alamat, NoHp, Jenis, Keterangan, Tanggal, Jumlah, Status) VALUES (@Name, @Address, @Phone, @Jenis, @Keterangan, @Tanggal, @Jumlah, @Status)", conn);
+                        cmd = new SqlCommand("INSERT INTO tbMustahiq (NamaMustahiq, Alamat, NoHp, Jenis, Keterangan, Tanggal, Jumlah, Status) VALUES (@Name, @Address, @Phone, @Jenis, @Keterangan, @Tanggal, @Jumlah, @Status)", conn);
                         cmd.Parameters.AddWithValue("@Name", txtNamaMustahiq.Text);
                         cmd.Parameters.AddWithValue("@Address", txtAlamatMustahiq.Text);
                         cmd.Parameters.AddWithValue("@Phone", txtHpMustahiq.Text);                        
@@ -68,7 +68,7 @@ namespace Aplikasi_Zakat
             {
                 if (MessageBox.Show("Ingin Update data ini?", "Update Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cmd = new SqlCommand("UPDATE tbMustahiq SET Nama = @Name, Alamat = @Address, NoHp = @Phone, Jenis = @Jenis, Keterangan = @Keterangan, Tanggal = @Tanggal, Jumlah = @Jumlah, Status = @Status WHERE Id LIKE '" + lblIdMustahiq.Text + "' ", conn);
+                    cmd = new SqlCommand("UPDATE tbMustahiq SET NamaMustahiq = @Name, Alamat = @Address, NoHp = @Phone, Jenis = @Jenis, Keterangan = @Keterangan, Tanggal = @Tanggal, Jumlah = @Jumlah, Status = @Status WHERE Id LIKE '" + lblIdMustahiq.Text + "' ", conn);
                     cmd.Parameters.AddWithValue("@Name", txtNamaMustahiq.Text);
                     cmd.Parameters.AddWithValue("@Address", txtAlamatMustahiq.Text);
                     cmd.Parameters.AddWithValue("@Phone", txtHpMustahiq.Text);                    
@@ -107,6 +107,24 @@ namespace Aplikasi_Zakat
             txtJumlah.Clear();
             CmbJenis.Text = "";
             CmbStatus.Text = "";            
+        }
+
+        private void txtHpMustahiq_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Hanya menerima angka (0-9) dan tombol kontrol seperti Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Mencegah input selain angka
+            }
+        }
+
+        private void txtJumlah_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Hanya menerima angka (0-9) dan tombol kontrol seperti Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Mencegah input selain angka
+            }
         }
     }
 }

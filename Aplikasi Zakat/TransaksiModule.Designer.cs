@@ -1,6 +1,6 @@
 ﻿namespace Aplikasi_Zakat
 {
-    partial class MustahiqModule
+    partial class TransaksiModule
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MustahiqModule));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransaksiModule));
             this.lblIdMuzzaki = new System.Windows.Forms.Label();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
@@ -36,14 +36,9 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.CmbStatus = new System.Windows.Forms.ComboBox();
-            this.CmbJenis = new System.Windows.Forms.ComboBox();
             this.btnInput = new Guna.UI2.WinForms.Guna2Button();
-            this.dateTimePickerZakat = new System.Windows.Forms.DateTimePicker();
-            this.txtKeterangan = new System.Windows.Forms.TextBox();
-            this.txtAlamatMustahiq = new System.Windows.Forms.TextBox();
-            this.txtNamaMustahiq = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePickerTransaksi = new System.Windows.Forms.DateTimePicker();
+            this.txtJumlah = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,11 +46,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.txtHpMustahiq = new System.Windows.Forms.TextBox();
+            this.txtNamaTransaksi = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtJumlah = new System.Windows.Forms.TextBox();
+            this.cmbJenisTransaksi = new System.Windows.Forms.ComboBox();
+            this.cmbAmil = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblIdMustahiq = new System.Windows.Forms.Label();
+            this.cmbJenisZakat = new System.Windows.Forms.ComboBox();
+            this.txtKeterangan = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -112,7 +109,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(332, 54);
             this.label11.TabIndex = 49;
-            this.label11.Text = "Form Mustahiq";
+            this.label11.Text = "Form Transaksi";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2CirclePictureBox1
@@ -147,31 +144,6 @@
             this.label10.TabIndex = 46;
             this.label10.Text = "Zakata";
             // 
-            // CmbStatus
-            // 
-            this.CmbStatus.FormattingEnabled = true;
-            this.CmbStatus.Items.AddRange(new object[] {
-            "AKTIF",
-            "TIDAK AKTIF"});
-            this.CmbStatus.Location = new System.Drawing.Point(302, 621);
-            this.CmbStatus.Name = "CmbStatus";
-            this.CmbStatus.Size = new System.Drawing.Size(142, 33);
-            this.CmbStatus.TabIndex = 45;
-            // 
-            // CmbJenis
-            // 
-            this.CmbJenis.FormattingEnabled = true;
-            this.CmbJenis.Items.AddRange(new object[] {
-            "Fakir",
-            "Miskin",
-            "Amil",
-            "Gharimin",
-            "Ibnu Sabil"});
-            this.CmbJenis.Location = new System.Drawing.Point(302, 419);
-            this.CmbJenis.Name = "CmbJenis";
-            this.CmbJenis.Size = new System.Drawing.Size(142, 33);
-            this.CmbJenis.TabIndex = 44;
-            // 
             // btnInput
             // 
             this.btnInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -189,109 +161,78 @@
             this.btnInput.Text = "INPUT";
             this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
             // 
-            // dateTimePickerZakat
+            // dateTimePickerTransaksi
             // 
-            this.dateTimePickerZakat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dateTimePickerTransaksi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePickerZakat.Location = new System.Drawing.Point(302, 521);
-            this.dateTimePickerZakat.Name = "dateTimePickerZakat";
-            this.dateTimePickerZakat.Size = new System.Drawing.Size(300, 31);
-            this.dateTimePickerZakat.TabIndex = 42;
+            this.dateTimePickerTransaksi.Location = new System.Drawing.Point(302, 269);
+            this.dateTimePickerTransaksi.Name = "dateTimePickerTransaksi";
+            this.dateTimePickerTransaksi.Size = new System.Drawing.Size(300, 31);
+            this.dateTimePickerTransaksi.TabIndex = 42;
             // 
-            // txtKeterangan
+            // txtJumlah
             // 
-            this.txtKeterangan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtJumlah.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKeterangan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKeterangan.Location = new System.Drawing.Point(302, 471);
-            this.txtKeterangan.Name = "txtKeterangan";
-            this.txtKeterangan.Size = new System.Drawing.Size(640, 31);
-            this.txtKeterangan.TabIndex = 41;
-            // 
-            // txtAlamatMustahiq
-            // 
-            this.txtAlamatMustahiq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAlamatMustahiq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAlamatMustahiq.Location = new System.Drawing.Point(302, 319);
-            this.txtAlamatMustahiq.Name = "txtAlamatMustahiq";
-            this.txtAlamatMustahiq.Size = new System.Drawing.Size(640, 31);
-            this.txtAlamatMustahiq.TabIndex = 38;
-            // 
-            // txtNamaMustahiq
-            // 
-            this.txtNamaMustahiq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNamaMustahiq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNamaMustahiq.Location = new System.Drawing.Point(302, 269);
-            this.txtNamaMustahiq.Name = "txtNamaMustahiq";
-            this.txtNamaMustahiq.Size = new System.Drawing.Size(400, 31);
-            this.txtNamaMustahiq.TabIndex = 37;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(61, 521);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(235, 30);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "Tanggal Terima :";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtJumlah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJumlah.Location = new System.Drawing.Point(302, 461);
+            this.txtJumlah.Name = "txtJumlah";
+            this.txtJumlah.Size = new System.Drawing.Size(300, 31);
+            this.txtJumlah.TabIndex = 41;
             // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(61, 622);
+            this.label7.Location = new System.Drawing.Point(61, 557);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(235, 30);
             this.label7.TabIndex = 35;
-            this.label7.Text = "Status :";
+            this.label7.Text = "Keterangan :";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(61, 471);
+            this.label6.Location = new System.Drawing.Point(61, 509);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(235, 30);
             this.label6.TabIndex = 34;
-            this.label6.Text = "Keterangan :";
+            this.label6.Text = "Amil :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(61, 420);
+            this.label5.Location = new System.Drawing.Point(61, 461);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(235, 30);
             this.label5.TabIndex = 33;
-            this.label5.Text = "Jenis Mustahiq :";
+            this.label5.Text = "Jumlah :";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(61, 369);
+            this.label3.Location = new System.Drawing.Point(61, 365);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(235, 30);
             this.label3.TabIndex = 31;
-            this.label3.Text = "No Hp :";
+            this.label3.Text = "Nama :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(61, 319);
+            this.label2.Location = new System.Drawing.Point(61, 317);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(235, 30);
             this.label2.TabIndex = 30;
-            this.label2.Text = "Alamat :";
+            this.label2.Text = "Jenis Transaksi :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
@@ -302,7 +243,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 30);
             this.label1.TabIndex = 29;
-            this.label1.Text = "Nama Mustahiq :";
+            this.label1.Text = "Tanggal Transaksi :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnExit
@@ -328,16 +269,18 @@
             this.btnExit.TabIndex = 1;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // txtHpMustahiq
+            // txtNamaTransaksi
             // 
-            this.txtHpMustahiq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNamaTransaksi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHpMustahiq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHpMustahiq.Location = new System.Drawing.Point(302, 369);
-            this.txtHpMustahiq.Name = "txtHpMustahiq";
-            this.txtHpMustahiq.Size = new System.Drawing.Size(300, 31);
-            this.txtHpMustahiq.TabIndex = 39;
-            this.txtHpMustahiq.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHpMustahiq_KeyPress);
+            this.txtNamaTransaksi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtNamaTransaksi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtNamaTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNamaTransaksi.Location = new System.Drawing.Point(302, 365);
+            this.txtNamaTransaksi.Name = "txtNamaTransaksi";
+            this.txtNamaTransaksi.Size = new System.Drawing.Size(300, 31);
+            this.txtNamaTransaksi.TabIndex = 39;
+            this.txtNamaTransaksi.Leave += new System.EventHandler(this.txtNamaTransaksi_Leave);
             // 
             // panel1
             // 
@@ -349,45 +292,72 @@
             this.panel1.Size = new System.Drawing.Size(1080, 30);
             this.panel1.TabIndex = 28;
             // 
-            // txtJumlah
+            // cmbJenisTransaksi
             // 
-            this.txtJumlah.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtJumlah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtJumlah.Location = new System.Drawing.Point(302, 571);
-            this.txtJumlah.Name = "txtJumlah";
-            this.txtJumlah.Size = new System.Drawing.Size(300, 31);
-            this.txtJumlah.TabIndex = 56;
-            this.txtJumlah.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJumlah_KeyPress);
+            this.cmbJenisTransaksi.FormattingEnabled = true;
+            this.cmbJenisTransaksi.Items.AddRange(new object[] {
+            "Penerimaan",
+            "Distribusi"});
+            this.cmbJenisTransaksi.Location = new System.Drawing.Point(302, 316);
+            this.cmbJenisTransaksi.Name = "cmbJenisTransaksi";
+            this.cmbJenisTransaksi.Size = new System.Drawing.Size(142, 33);
+            this.cmbJenisTransaksi.TabIndex = 55;
+            this.cmbJenisTransaksi.SelectedIndexChanged += new System.EventHandler(this.cmbJenisTransaksi_SelectedIndexChanged);
+            // 
+            // cmbAmil
+            // 
+            this.cmbAmil.FormattingEnabled = true;
+            this.cmbAmil.Location = new System.Drawing.Point(302, 508);
+            this.cmbAmil.Name = "cmbAmil";
+            this.cmbAmil.Size = new System.Drawing.Size(142, 33);
+            this.cmbAmil.TabIndex = 56;
+            this.cmbAmil.SelectedIndexChanged += new System.EventHandler(this.cmbAmil_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(61, 571);
+            this.label4.Location = new System.Drawing.Point(61, 413);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(235, 30);
-            this.label4.TabIndex = 55;
-            this.label4.Text = "Jumlah Terima :";
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Jenis Zakat :";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblIdMustahiq
+            // cmbJenisZakat
             // 
-            this.lblIdMustahiq.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblIdMustahiq.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdMustahiq.Location = new System.Drawing.Point(7, 678);
-            this.lblIdMustahiq.Name = "lblIdMustahiq";
-            this.lblIdMustahiq.Size = new System.Drawing.Size(235, 30);
-            this.lblIdMustahiq.TabIndex = 57;
-            this.lblIdMustahiq.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmbJenisZakat.FormattingEnabled = true;
+            this.cmbJenisZakat.Items.AddRange(new object[] {
+            "Zakat Fitrah",
+            "Zakat Maal",
+            "Infaq",
+            "Shodaqoh",
+            "Fidyah"});
+            this.cmbJenisZakat.Location = new System.Drawing.Point(302, 412);
+            this.cmbJenisZakat.Name = "cmbJenisZakat";
+            this.cmbJenisZakat.Size = new System.Drawing.Size(142, 33);
+            this.cmbJenisZakat.TabIndex = 57;
             // 
-            // MustahiqModule
+            // txtKeterangan
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.txtKeterangan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKeterangan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKeterangan.Location = new System.Drawing.Point(302, 557);
+            this.txtKeterangan.Multiline = true;
+            this.txtKeterangan.Name = "txtKeterangan";
+            this.txtKeterangan.Size = new System.Drawing.Size(300, 100);
+            this.txtKeterangan.TabIndex = 58;
+            // 
+            // TransaksiModule
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 720);
-            this.Controls.Add(this.lblIdMustahiq);
-            this.Controls.Add(this.txtJumlah);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtKeterangan);
+            this.Controls.Add(this.cmbJenisZakat);
+            this.Controls.Add(this.cmbAmil);
+            this.Controls.Add(this.cmbJenisTransaksi);
             this.Controls.Add(this.lblIdMuzzaki);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnEdit);
@@ -395,28 +365,25 @@
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.CmbStatus);
-            this.Controls.Add(this.CmbJenis);
             this.Controls.Add(this.btnInput);
-            this.Controls.Add(this.dateTimePickerZakat);
-            this.Controls.Add(this.txtKeterangan);
-            this.Controls.Add(this.txtAlamatMustahiq);
-            this.Controls.Add(this.txtNamaMustahiq);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dateTimePickerTransaksi);
+            this.Controls.Add(this.txtJumlah);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtHpMustahiq);
+            this.Controls.Add(this.txtNamaTransaksi);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "MustahiqModule";
+            this.Name = "TransaksiModule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MustahiqModule";
+            this.Text = "TransaksiModule";
+            this.Load += new System.EventHandler(this.TransaksiModule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -433,14 +400,9 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        public System.Windows.Forms.ComboBox CmbStatus;
-        public System.Windows.Forms.ComboBox CmbJenis;
         public Guna.UI2.WinForms.Guna2Button btnInput;
-        public System.Windows.Forms.DateTimePicker dateTimePickerZakat;
-        public System.Windows.Forms.TextBox txtKeterangan;
-        public System.Windows.Forms.TextBox txtAlamatMustahiq;
-        public System.Windows.Forms.TextBox txtNamaMustahiq;
-        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.DateTimePicker dateTimePickerTransaksi;
+        public System.Windows.Forms.TextBox txtJumlah;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -448,10 +410,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2CircleButton btnExit;
-        public System.Windows.Forms.TextBox txtHpMustahiq;
+        public System.Windows.Forms.TextBox txtNamaTransaksi;
         private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.TextBox txtJumlah;
+        public System.Windows.Forms.ComboBox cmbJenisTransaksi;
+        public System.Windows.Forms.ComboBox cmbAmil;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Label lblIdMustahiq;
+        public System.Windows.Forms.ComboBox cmbJenisZakat;
+        public System.Windows.Forms.TextBox txtKeterangan;
     }
 }

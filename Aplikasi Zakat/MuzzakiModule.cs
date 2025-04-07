@@ -43,7 +43,7 @@ namespace Aplikasi_Zakat
                 {          
                     if(MessageBox.Show("Are you sure you want to save this data?", "Save Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        cmd = new SqlCommand("INSERT INTO tbMuzzaki (Nama, Alamat, NoHp, Email, JenisZakat, Jumlah, Nominal, MetodeBayar, TanggalZakat) VALUES (@Name, @Address, @Phone, @Email, @Jenis, @Jumlah, @Nominal, @MetodeBayar, @Tanggal)", conn);
+                        cmd = new SqlCommand("INSERT INTO tbMuzzaki (NamaMuzzaki, Alamat, NoHp, Email, JenisZakat, Jumlah, Nominal, MetodeBayar, TanggalZakat) VALUES (@Name, @Address, @Phone, @Email, @Jenis, @Jumlah, @Nominal, @MetodeBayar, @Tanggal)", conn);
                         cmd.Parameters.AddWithValue("@Name", txtNamaMuzzaki.Text);
                         cmd.Parameters.AddWithValue("@Address", txtAlamatMuzzaki.Text);
                         cmd.Parameters.AddWithValue("@Phone", txtHpMuzzaki.Text);
@@ -73,7 +73,7 @@ namespace Aplikasi_Zakat
             {
                 if(MessageBox.Show("Ingin Update data ini?", "Update Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cmd = new SqlCommand("UPDATE tbMuzzaki SET Nama = @Name, Alamat = @Address, NoHp = @Phone, Email = @Email, JenisZakat = @Jenis, Jumlah = @Jumlah, Nominal = @Nominal, MetodeBayar = @MetodeBayar, TanggalZakat = @Tanggal WHERE Id LIKE '" + lblIdMuzzaki.Text + "' ", conn);
+                    cmd = new SqlCommand("UPDATE tbMuzzaki SET NamaMuzzaki = @Name, Alamat = @Address, NoHp = @Phone, Email = @Email, JenisZakat = @Jenis, Jumlah = @Jumlah, Nominal = @Nominal, MetodeBayar = @MetodeBayar, TanggalZakat = @Tanggal WHERE Id LIKE '" + lblIdMuzzaki.Text + "' ", conn);
                     cmd.Parameters.AddWithValue("@Name", txtNamaMuzzaki.Text);
                     cmd.Parameters.AddWithValue("@Address", txtAlamatMuzzaki.Text);
                     cmd.Parameters.AddWithValue("@Phone", txtHpMuzzaki.Text);

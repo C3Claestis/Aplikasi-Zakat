@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransaksiForm));
-            this.dgvMustahiq = new System.Windows.Forms.DataGridView();
+            this.dgvTransaksi = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSrchTransaksi = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -44,28 +44,29 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMustahiq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransaksi)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvMustahiq
+            // dgvTransaksi
             // 
-            this.dgvMustahiq.AllowUserToAddRows = false;
-            this.dgvMustahiq.AllowUserToResizeColumns = false;
-            this.dgvMustahiq.AllowUserToResizeRows = false;
-            this.dgvMustahiq.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMustahiq.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTransaksi.AllowUserToAddRows = false;
+            this.dgvTransaksi.AllowUserToResizeColumns = false;
+            this.dgvTransaksi.AllowUserToResizeRows = false;
+            this.dgvTransaksi.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.MediumAquamarine;
-            this.dgvMustahiq.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMustahiq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMustahiq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransaksi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -74,6 +75,7 @@
             this.Column6,
             this.Column7,
             this.Column8,
+            this.Column9,
             this.Edit,
             this.Delete});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -83,11 +85,11 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.MediumAquamarine;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMustahiq.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMustahiq.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMustahiq.EnableHeadersVisualStyles = false;
-            this.dgvMustahiq.Location = new System.Drawing.Point(0, 0);
-            this.dgvMustahiq.Name = "dgvMustahiq";
+            this.dgvTransaksi.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTransaksi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTransaksi.EnableHeadersVisualStyles = false;
+            this.dgvTransaksi.Location = new System.Drawing.Point(0, 0);
+            this.dgvTransaksi.Name = "dgvTransaksi";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -95,12 +97,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMustahiq.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvMustahiq.RowHeadersVisible = false;
-            this.dgvMustahiq.RowHeadersWidth = 51;
-            this.dgvMustahiq.RowTemplate.Height = 24;
-            this.dgvMustahiq.Size = new System.Drawing.Size(1004, 442);
-            this.dgvMustahiq.TabIndex = 5;
+            this.dgvTransaksi.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTransaksi.RowHeadersVisible = false;
+            this.dgvTransaksi.RowHeadersWidth = 51;
+            this.dgvTransaksi.RowTemplate.Height = 24;
+            this.dgvTransaksi.Size = new System.Drawing.Size(1004, 442);
+            this.dgvTransaksi.TabIndex = 5;
+            this.dgvTransaksi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransaksi_CellContentClick);
             // 
             // panel1
             // 
@@ -209,10 +212,11 @@
             // 
             // Column7
             // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column7.HeaderText = "Jumlah";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.Width = 96;
             // 
             // Column8
             // 
@@ -221,6 +225,13 @@
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.Width = 77;
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column9.HeaderText = "Keterangan";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
             // 
             // Edit
             // 
@@ -245,7 +256,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 506);
-            this.Controls.Add(this.dgvMustahiq);
+            this.Controls.Add(this.dgvTransaksi);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -253,7 +264,7 @@
             this.Name = "TransaksiForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TransaksiForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMustahiq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransaksi)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -261,7 +272,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvMustahiq;
+        private System.Windows.Forms.DataGridView dgvTransaksi;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2TextBox txtSrchTransaksi;
         private Guna.UI2.WinForms.Guna2CircleButton btnAdd;
@@ -273,6 +284,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
     }

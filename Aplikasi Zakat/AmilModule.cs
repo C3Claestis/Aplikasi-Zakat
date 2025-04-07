@@ -38,7 +38,7 @@ namespace Aplikasi_Zakat
                 {
                     if (MessageBox.Show("Are you sure you want to save this data?", "Save Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        cmd = new SqlCommand("INSERT INTO tbAmil (Nama, NoHp, Alamat, Jabatan, Username, Password, TanggalBergabung, Status) VALUES (@Name, @Phone, @Address, @Jabatan, @Username, @Password, @TanggalBergabung, @Status)", conn);
+                        cmd = new SqlCommand("INSERT INTO tbAmil (NamaAmil, NoHp, Alamat, Jabatan, Username, Password, TanggalBergabung, Status) VALUES (@Name, @Phone, @Address, @Jabatan, @Username, @Password, @TanggalBergabung, @Status)", conn);
                         cmd.Parameters.AddWithValue("@Name", txtNamaAmil.Text);
                         cmd.Parameters.AddWithValue("@Phone", txtNoHpAmil.Text);
                         cmd.Parameters.AddWithValue("@Address", txtAlamatAmil.Text);                       
@@ -68,7 +68,7 @@ namespace Aplikasi_Zakat
             {
                 if (MessageBox.Show("Ingin Update data ini?", "Update Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cmd = new SqlCommand("UPDATE tbAmil SET Nama = @Name, NoHp = @Phone, Alamat = @Address, Jabatan = @Jabatan, Username = @Username, Password = @Password, TanggalBergabung = @TanggalBergabung, Status = @Status WHERE Id LIKE '" + lblIdAmil.Text + "' ", conn);
+                    cmd = new SqlCommand("UPDATE tbAmil SET NamaAmil = @Name, NoHp = @Phone, Alamat = @Address, Jabatan = @Jabatan, Username = @Username, Password = @Password, TanggalBergabung = @TanggalBergabung, Status = @Status WHERE Id LIKE '" + lblIdAmil.Text + "' ", conn);
                     cmd.Parameters.AddWithValue("@Name", txtNamaAmil.Text);
                     cmd.Parameters.AddWithValue("@Phone", txtNoHpAmil.Text);
                     cmd.Parameters.AddWithValue("@Address", txtAlamatAmil.Text);                    
@@ -108,6 +108,15 @@ namespace Aplikasi_Zakat
             txtPassword.Clear();
             CmbJabatan.Text = "";
             CmbStatus.Text = "";
+        }
+
+        private void txtNoHpAmil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Hanya menerima angka (0-9) dan tombol kontrol seperti Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Mencegah input selain angka
+            }
         }
     }
 }
