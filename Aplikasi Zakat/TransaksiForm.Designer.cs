@@ -33,9 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransaksiForm));
             this.dgvTransaksi = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSrchTransaksi = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +44,9 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSrchTransaksi = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaksi)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +78,7 @@
             this.Column9,
             this.Edit,
             this.Delete});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -104,63 +104,6 @@
             this.dgvTransaksi.Size = new System.Drawing.Size(1004, 442);
             this.dgvTransaksi.TabIndex = 5;
             this.dgvTransaksi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransaksi_CellContentClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.txtSrchTransaksi);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 442);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1004, 64);
-            this.panel1.TabIndex = 4;
-            // 
-            // txtSrchTransaksi
-            // 
-            this.txtSrchTransaksi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtSrchTransaksi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSrchTransaksi.DefaultText = "";
-            this.txtSrchTransaksi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSrchTransaksi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSrchTransaksi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSrchTransaksi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSrchTransaksi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSrchTransaksi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSrchTransaksi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSrchTransaksi.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSrchTransaksi.IconLeft")));
-            this.txtSrchTransaksi.Location = new System.Drawing.Point(225, 21);
-            this.txtSrchTransaksi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSrchTransaksi.Name = "txtSrchTransaksi";
-            this.txtSrchTransaksi.PlaceholderText = "";
-            this.txtSrchTransaksi.SelectedText = "";
-            this.txtSrchTransaksi.Size = new System.Drawing.Size(400, 31);
-            this.txtSrchTransaksi.TabIndex = 12;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.FillColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAdd.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAdd.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnAdd.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnAdd.Location = new System.Drawing.Point(942, 8);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.PressedColor = System.Drawing.Color.Transparent;
-            this.btnAdd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnAdd.Size = new System.Drawing.Size(50, 50);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Column1
             // 
@@ -250,6 +193,63 @@
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             this.Delete.Width = 68;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.txtSrchTransaksi);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 442);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1004, 64);
+            this.panel1.TabIndex = 4;
+            // 
+            // txtSrchTransaksi
+            // 
+            this.txtSrchTransaksi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtSrchTransaksi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSrchTransaksi.DefaultText = "";
+            this.txtSrchTransaksi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSrchTransaksi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSrchTransaksi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchTransaksi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchTransaksi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchTransaksi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSrchTransaksi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchTransaksi.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSrchTransaksi.IconLeft")));
+            this.txtSrchTransaksi.Location = new System.Drawing.Point(225, 21);
+            this.txtSrchTransaksi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSrchTransaksi.Name = "txtSrchTransaksi";
+            this.txtSrchTransaksi.PlaceholderText = "";
+            this.txtSrchTransaksi.SelectedText = "";
+            this.txtSrchTransaksi.Size = new System.Drawing.Size(400, 31);
+            this.txtSrchTransaksi.TabIndex = 12;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdd.FillColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAdd.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAdd.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAdd.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnAdd.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnAdd.Location = new System.Drawing.Point(942, 8);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.PressedColor = System.Drawing.Color.Transparent;
+            this.btnAdd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnAdd.Size = new System.Drawing.Size(50, 50);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // TransaksiForm
             // 

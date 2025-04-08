@@ -213,6 +213,7 @@
             this.btnAbout.Size = new System.Drawing.Size(240, 45);
             this.btnAbout.TabIndex = 15;
             this.btnAbout.Text = "Tentang";
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // panel10
             // 
@@ -240,6 +241,7 @@
             this.btnLaporan.Size = new System.Drawing.Size(240, 45);
             this.btnLaporan.TabIndex = 13;
             this.btnLaporan.Text = "Laporan";
+            this.btnLaporan.Click += new System.EventHandler(this.btnLaporan_Click);
             // 
             // panel9
             // 

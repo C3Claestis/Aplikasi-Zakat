@@ -34,8 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
             this.dgvAmil = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSrchAmil = new Guna.UI2.WinForms.Guna2TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +45,8 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSrchAmil = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAmil)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +103,7 @@
             this.Column8,
             this.Edit,
             this.Delete});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -129,39 +129,6 @@
             this.dgvAmil.Size = new System.Drawing.Size(1004, 442);
             this.dgvAmil.TabIndex = 3;
             this.dgvAmil.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAmil_CellContentClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.txtSrchAmil);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 442);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1004, 64);
-            this.panel1.TabIndex = 2;
-            // 
-            // txtSrchAmil
-            // 
-            this.txtSrchAmil.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtSrchAmil.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSrchAmil.DefaultText = "";
-            this.txtSrchAmil.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSrchAmil.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSrchAmil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSrchAmil.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSrchAmil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSrchAmil.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSrchAmil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSrchAmil.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSrchAmil.IconLeft")));
-            this.txtSrchAmil.Location = new System.Drawing.Point(302, 17);
-            this.txtSrchAmil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSrchAmil.Name = "txtSrchAmil";
-            this.txtSrchAmil.PlaceholderText = "";
-            this.txtSrchAmil.SelectedText = "";
-            this.txtSrchAmil.Size = new System.Drawing.Size(400, 31);
-            this.txtSrchAmil.TabIndex = 13;
-            this.txtSrchAmil.TextChanged += new System.EventHandler(this.txtSrchAmil_TextChanged);
             // 
             // Column1
             // 
@@ -256,12 +223,46 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 68;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.txtSrchAmil);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 442);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1004, 64);
+            this.panel1.TabIndex = 2;
+            // 
+            // txtSrchAmil
+            // 
+            this.txtSrchAmil.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtSrchAmil.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSrchAmil.DefaultText = "";
+            this.txtSrchAmil.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSrchAmil.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSrchAmil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchAmil.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSrchAmil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchAmil.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSrchAmil.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSrchAmil.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSrchAmil.IconLeft")));
+            this.txtSrchAmil.Location = new System.Drawing.Point(302, 17);
+            this.txtSrchAmil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSrchAmil.Name = "txtSrchAmil";
+            this.txtSrchAmil.PlaceholderText = "";
+            this.txtSrchAmil.SelectedText = "";
+            this.txtSrchAmil.Size = new System.Drawing.Size(400, 31);
+            this.txtSrchAmil.TabIndex = 13;
+            this.txtSrchAmil.TextChanged += new System.EventHandler(this.txtSrchAmil_TextChanged);
+            // 
             // AmilForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1004, 506);
             this.Controls.Add(this.dgvAmil);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AmilForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

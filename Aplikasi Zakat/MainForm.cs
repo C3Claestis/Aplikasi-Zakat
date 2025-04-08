@@ -43,6 +43,14 @@ namespace Aplikasi_Zakat
         {
             openChildForm(new TransaksiForm(), "Transaksi");
         }
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            openChildForm(new AboutForm(), "Tentang");
+        }
+        private void btnLaporan_Click(object sender, EventArgs e)
+        {
+            openChildForm(new LaporanForm(), "Laporan");
+        }
 
         #region METHODS
         private void openChildForm(Form childForm, string form)
@@ -62,8 +70,7 @@ namespace Aplikasi_Zakat
             childForm.Show();
         }
 
-        #endregion METHODS                    
 
-       
+        #endregion METHODS                            
     }
 }
