@@ -26,8 +26,10 @@ namespace Aplikasi_Zakat
         private void btnAdd_Click(object sender, EventArgs e)
         {
             TransaksiModule transaksiModule = new TransaksiModule();
+            transaksiModule.NonAktifkanKomponen();
             transaksiModule.btnEdit.Enabled = false;
             transaksiModule.ShowDialog();            
+            ShowData();
         }
         
         void ShowData()
@@ -82,7 +84,52 @@ namespace Aplikasi_Zakat
 
         private void dgvTransaksi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string colname = dgvTransaksi.Columns[e.ColumnIndex].Name;
 
+            if (colname == "Edit")
+            {
+                TransaksiModule transaksiModule = new TransaksiModule();
+                transaksiModule.lblIdTransaksi.Text = dgvTransaksi.Rows[e.RowIndex].Cells[0].Value.ToString();
+                transaksiModule.dateTimePickerTransaksi.Text = dgvTransaksi.Rows[e.RowIndex].Cells[1].Value.ToString();
+                transaksiModule.cmbJenisTransaksi.Text = dgvTransaksi.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+                if (dgvTransaksi.Rows[e.RowIndex].Cells[3].Value.ToString() == "-")
+                {
+                    transaksiModule.txtNamaTransaksi.Text = dgvTransaksi.Rows[e.RowIndex].Cells[4].Value.ToString();
+                }
+                else
+                {
+                    transaksiModule.txtNamaTransaksi.Text = dgvTransaksi.Rows[e.RowIndex].Cells[3].Value.ToString();
+                }
+               
+                transaksiModule.cmbJenisZakat.Text = dgvTransaksi.Rows[e.RowIndex].Cells[5].Value.ToString();
+                transaksiModule.txtJumlah.Text = dgvTransaksi.Rows[e.RowIndex].Cells[6].Value.ToString();
+                transaksiModule.cmbAmil.Text = dgvTransaksi.Rows[e.RowIndex].Cells[7].Value.ToString();
+                transaksiModule.txtKeterangan.Text = dgvTransaksi.Rows[e.RowIndex].Cells[8].Value.ToString();
+                
+                transaksiModule.btnInput.Enabled = false;
+                transaksiModule.btnClear.Enabled = false;
+                transaksiModule.btnEdit.Enabled = true;
+                transaksiModule.ShowDialog();
+                transaksiModule.AktifKomponen();
+
+                ShowData();
+            }
+            else if (colname == "Delete")
+            {
+                if (MessageBox.Show("Are you sure you want to delete this data?", "Delete Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cmd = new SqlCommand("DELETE FROM tbTransaksi WHERE IdTransaksi = @id", conn);
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("@id", dgvTransaksi.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Transaksi berhasil dihapus", "Deleting Product", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ShowData();
+                }
+            }
+
+            ShowData();
         }
     }
 }

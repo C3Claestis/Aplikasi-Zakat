@@ -53,6 +53,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbJenisZakat = new System.Windows.Forms.ComboBox();
             this.txtKeterangan = new System.Windows.Forms.TextBox();
+            this.lblIdTransaksi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -349,11 +350,22 @@
             this.txtKeterangan.Size = new System.Drawing.Size(300, 100);
             this.txtKeterangan.TabIndex = 58;
             // 
+            // lblIdTransaksi
+            // 
+            this.lblIdTransaksi.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblIdTransaksi.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdTransaksi.Location = new System.Drawing.Point(7, 684);
+            this.lblIdTransaksi.Name = "lblIdTransaksi";
+            this.lblIdTransaksi.Size = new System.Drawing.Size(235, 30);
+            this.lblIdTransaksi.TabIndex = 59;
+            this.lblIdTransaksi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // TransaksiModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 720);
+            this.Controls.Add(this.lblIdTransaksi);
             this.Controls.Add(this.txtKeterangan);
             this.Controls.Add(this.cmbJenisZakat);
             this.Controls.Add(this.cmbAmil);
@@ -417,5 +429,6 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ComboBox cmbJenisZakat;
         public System.Windows.Forms.TextBox txtKeterangan;
+        public System.Windows.Forms.Label lblIdTransaksi;
     }
 }

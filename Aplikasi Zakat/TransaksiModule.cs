@@ -18,7 +18,7 @@ namespace Aplikasi_Zakat
 
         int idTerkait = 0;
         int idAmil = 0;
-
+        int selectedIdTransaksi = 0;
         public TransaksiModule()
         {
             InitializeComponent();
@@ -26,9 +26,7 @@ namespace Aplikasi_Zakat
         }
         private void TransaksiModule_Load(object sender, EventArgs e)
         {
-            LoadAmil();
-
-            NonAktifkanKomponen();
+            LoadAmil();            
         }
         private void btnInput_Click(object sender, EventArgs e)
         {
@@ -74,14 +72,80 @@ namespace Aplikasi_Zakat
 
             MessageBox.Show("Transaksi berhasil disimpan");
 
-
+            Clear();
         }
-
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            // Pastikan ID telah terisi di lblIdTransaksi
+            if (string.IsNullOrEmpty(lblIdTransaksi.Text) || lblIdTransaksi.Text == "0")
+            {
+                MessageBox.Show("Silakan pilih data yang ingin diubah.");
+                return;
+            }
 
+            // Ambil ID dari label
+            int idTransaksi = int.Parse(lblIdTransaksi.Text);
+
+            string jenis = cmbJenisTransaksi.Text;
+            string nama = txtNamaTransaksi.Text.Trim();
+            string keterangan = txtKeterangan.Text;
+            string jeniszakat = cmbJenisZakat.Text;
+            string nominal = txtJumlah.Text;
+            DateTime tanggal = dateTimePickerTransaksi.Value;
+
+            if (string.IsNullOrEmpty(jenis) || string.IsNullOrEmpty(nama) || string.IsNullOrEmpty(nominal))
+            {
+                MessageBox.Show("Mohon lengkapi semua data dan pastikan nominal valid.");
+                return;
+            }
+
+            // Ambil ID terkait berdasarkan nama (misalnya, dari tbMuzzaki atau tbMustahiq)
+            int idTerkait = GetIdTerkait(nama);
+            int idAmil = GetIdAmil(cmbAmil.Text);
+
+            if (idTerkait == 0 || idAmil == 0)
+            {
+                MessageBox.Show("Data tidak valid. Pastikan nama dan amil dipilih dengan benar.");
+                return;
+            }
+
+            SqlCommand cmd = new SqlCommand(@"
+        UPDATE tbTransaksi 
+        SET Tanggal = @tgl, 
+            JenisTransaksi = @jenis, 
+            IdTerkait = @idTerkait, 
+            JenisZakat = @jeniszakat, 
+            Jumlah = @nominal, 
+            IdAmil = @idAmil, 
+            Keterangan = @ket 
+        WHERE IdTransaksi = @id", conn);
+
+            cmd.Parameters.AddWithValue("@tgl", tanggal);
+            cmd.Parameters.AddWithValue("@jenis", jenis);
+            cmd.Parameters.AddWithValue("@idTerkait", idTerkait);
+            cmd.Parameters.AddWithValue("@jeniszakat", jeniszakat);
+            // Pastikan nominal dikonversi ke tipe data decimal jika di database adalah DECIMAL
+            if (!decimal.TryParse(nominal, out decimal jumlah))
+            {
+                MessageBox.Show("Nominal tidak valid. Pastikan format angka benar.");
+                return;
+            }
+            cmd.Parameters.AddWithValue("@nominal", jumlah);
+            cmd.Parameters.AddWithValue("@idAmil", idAmil);
+            cmd.Parameters.AddWithValue("@ket", keterangan);
+            cmd.Parameters.AddWithValue("@id", idTransaksi);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show("Transaksi berhasil diperbarui");
+            // Mengosongkan form input (Clear adalah fungsi untuk reset form) dan mengupdate tampilan data
+            lblIdTransaksi.Text = "0";
+            Clear();
+            this.Dispose();
         }
+
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -96,17 +160,24 @@ namespace Aplikasi_Zakat
         {
             AutoCompleteStringCollection data = new AutoCompleteStringCollection();
             SqlCommand cmd;
+            string fieldName = "";
 
             if (cmbJenisTransaksi.Text == "Penerimaan")
-                cmd = new SqlCommand("SELECT Nama FROM tbMuzzaki", conn);
+            {
+                cmd = new SqlCommand("SELECT NamaMuzzaki FROM tbMuzzaki", conn);
+                fieldName = "NamaMuzzaki";
+            }
             else
-                cmd = new SqlCommand("SELECT Nama FROM tbMustahiq", conn);
+            {
+                cmd = new SqlCommand("SELECT NamaMustahiq FROM tbMustahiq", conn);
+                fieldName = "NamaMustahiq";
+            }
 
             conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                data.Add(dr["Nama"].ToString());
+                data.Add(dr[fieldName].ToString());
             }
             dr.Close();
             conn.Close();
@@ -116,13 +187,14 @@ namespace Aplikasi_Zakat
             txtNamaTransaksi.AutoCompleteCustomSource = data;
         }
 
+
         int GetIdTerkait(string nama)
         {
             string query = "";
             if (cmbJenisTransaksi.Text == "Penerimaan")
-                query = "SELECT Id FROM tbMuzzaki WHERE Nama = @nama";
+                query = "SELECT IdMuzzaki FROM tbMuzzaki WHERE NamaMuzzaki = @nama";
             else
-                query = "SELECT Id FROM tbMustahiq WHERE Nama = @nama";
+                query = "SELECT IdMustahiq FROM tbMustahiq WHERE NamaMustahiq = @nama";
 
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@nama", nama);
@@ -137,12 +209,12 @@ namespace Aplikasi_Zakat
         void LoadAmil()
         {
             cmbAmil.Items.Clear();
-            SqlCommand cmd = new SqlCommand("SELECT Nama FROM tbAmil", conn);
+            SqlCommand cmd = new SqlCommand("SELECT NamaAmil FROM tbAmil", conn);
             conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                cmbAmil.Items.Add(dr["Nama"].ToString());
+                cmbAmil.Items.Add(dr["NamaAmil"].ToString());
             }
             dr.Close();
             conn.Close();
@@ -150,7 +222,7 @@ namespace Aplikasi_Zakat
 
         int GetIdAmil(string nama)
         {
-            SqlCommand cmd = new SqlCommand("SELECT Id FROM tbAmil WHERE Nama = @nama", conn);
+            SqlCommand cmd = new SqlCommand("SELECT IdAmil FROM tbAmil WHERE NamaAmil = @nama", conn);
             cmd.Parameters.AddWithValue("@nama", nama);
             conn.Open();
             object result = cmd.ExecuteScalar();
@@ -162,13 +234,7 @@ namespace Aplikasi_Zakat
         {
             if (cmbJenisTransaksi.SelectedIndex != -1)
             {
-                // Aktifkan komponen
-                txtNamaTransaksi.Enabled = true;
-                cmbAmil.Enabled = true;
-                cmbJenisZakat.Enabled = true;
-                txtJumlah.Enabled = true;
-                txtKeterangan.Enabled = true;
-                btnInput.Enabled = true;
+                AktifKomponen();
 
                 LoadAutoCompleteNamaTerkait();
             }
@@ -197,14 +263,22 @@ namespace Aplikasi_Zakat
             NonAktifkanKomponen();
         }
 
-        void NonAktifkanKomponen()
+        public void AktifKomponen()
+        {
+            // Aktifkan komponen
+            txtNamaTransaksi.Enabled = true;
+            cmbAmil.Enabled = true;
+            cmbJenisZakat.Enabled = true;
+            txtJumlah.Enabled = true;
+            txtKeterangan.Enabled = true;            
+        }
+        public void NonAktifkanKomponen()
         {
             txtNamaTransaksi.Enabled = false;
             cmbAmil.Enabled = false;
             cmbJenisZakat.Enabled = false;
             txtJumlah.Enabled = false;
-            txtKeterangan.Enabled = false;
-            btnInput.Enabled = false;
+            txtKeterangan.Enabled = false;            
         }
     }
 }
