@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label9.Text" xml:space="preserve">
+    <value>إِنَّمَا ٱلصَّدَقَـٰتُ لِلْفُقَرَآءِ وَٱلْمَسَـٰكِينِ وَٱلْعَـٰمِلِينَ عَلَيْهَا وَٱلْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِى ٱلرِّقَابِ وَٱلْغَـٰرِمِينَ وَفِى سَبِيلِ ٱللَّهِ وَٱبْنِ ٱلسَّبِيلِۖ فَرِيضَةً مِّنَ ٱللَّهِۗ وَٱللَّهُ عَلِيمٌ حَكِيمٌ</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>"Sesungguhnya zakat-zakat itu hanyalah untuk orang-orang fakir, orang-orang miskin, pengurus zakat, para mu’allaf yang dibujuk hatinya, untuk (memerdekakan) budak, orang-orang yang berutang, untuk jalan Allah dan untuk mereka yang sedang dalam perjalanan, sebagai kewajiban dari Allah. Dan Allah Maha Mengetahui lagi Maha Bijaksana."</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -138,6 +144,50 @@
         0yVl8QEcuP/OQNRSAzoRvyk9vwn5MyWl8QEceMjjW7TUgE5EuMeYpRVh45YZ0OlJ/fiKMJt9x8HRMgM6
         EcGPsVhYOJeqUVhmQCcivfxk8X0ByYQMg4w4pOHRS6ePZ9o+hxQ0BAIJVvGeQazswwPysqVYhkdodWuC
         jDqk6rHLZz69aD4btLqhzmcOKa2x64HRH5uzWQTAWtK9AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="guna2CirclePictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        fb8EfrVenAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="guna2CirclePictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -165,11 +215,5 @@
         yrXFl0Y4guJ3onD/v8kXAmuspSey133G2mHbtyj0C67ByW1an/BeLwoUKFCgQIECi8e/VBozC03XgUgA
         AAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>"Sesungguhnya zakat-zakat itu hanyalah untuk orang-orang fakir, orang-orang miskin, pengurus zakat, para mu’allaf yang dibujuk hatinya, untuk (memerdekakan) budak, orang-orang yang berutang, untuk jalan Allah dan untuk mereka yang sedang dalam perjalanan, sebagai kewajiban dari Allah. Dan Allah Maha Mengetahui lagi Maha Bijaksana."</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>إِنَّمَا ٱلصَّدَقَـٰتُ لِلْفُقَرَآءِ وَٱلْمَسَـٰكِينِ وَٱلْعَـٰمِلِينَ عَلَيْهَا وَٱلْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِى ٱلرِّقَابِ وَٱلْغَـٰرِمِينَ وَفِى سَبِيلِ ٱللَّهِ وَٱبْنِ ٱلسَّبِيلِۖ فَرِيضَةً مِّنَ ٱللَّهِۗ وَٱللَّهُ عَلِيمٌ حَكِيمٌ</value>
   </data>
 </root>

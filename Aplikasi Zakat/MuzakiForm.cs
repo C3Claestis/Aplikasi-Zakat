@@ -27,7 +27,7 @@ namespace Aplikasi_Zakat
             MuzzakiModule muzzakiModule = new MuzzakiModule();
             muzzakiModule.btnInput.Enabled = true;
             muzzakiModule.btnEdit.Enabled = false;
-            muzzakiModule.ShowDialog();
+            muzzakiModule.Show();
             ShowData();
         }
 
@@ -79,7 +79,7 @@ namespace Aplikasi_Zakat
                 muzzakiModule.btnInput.Enabled = false;
                 muzzakiModule.btnClear.Enabled = false;
                 muzzakiModule.btnEdit.Enabled = true;
-                muzzakiModule.ShowDialog();
+                muzzakiModule.Show();
             }
             else if (colname == "Delete")
             {

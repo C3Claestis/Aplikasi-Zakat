@@ -54,7 +54,7 @@ namespace Aplikasi_Zakat
             MustahiqModule mustahiqModule = new MustahiqModule();
             mustahiqModule.btnInput.Enabled = true;
             mustahiqModule.btnEdit.Enabled = false;
-            mustahiqModule.ShowDialog();
+            mustahiqModule.Show();
             ShowData();
         }
 
@@ -82,7 +82,7 @@ namespace Aplikasi_Zakat
                 mustahiqModule.btnInput.Enabled = false;
                 mustahiqModule.btnClear.Enabled = false;
                 mustahiqModule.btnEdit.Enabled = true;
-                mustahiqModule.ShowDialog();
+                mustahiqModule.Show();
             }
             else if (colname == "Delete")
             {

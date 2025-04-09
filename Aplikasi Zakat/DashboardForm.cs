@@ -16,5 +16,23 @@ namespace Aplikasi_Zakat
         {
             InitializeComponent();
         }
+
+        private void btnNisab_Click(object sender, EventArgs e)
+        {
+            NisabForm nisabForm = new NisabForm();
+            nisabForm.Show();
+        }
+
+        private void btnHitungPertanian_Click(object sender, EventArgs e)
+        {
+            NisabFormPertanian pertanianForm = new NisabFormPertanian();
+            pertanianForm.Show();
+        }
+
+        private void btnHitungHewan_Click(object sender, EventArgs e)
+        {
+            NisabHewan hewanForm = new NisabHewan();
+            hewanForm.Show();
+        }
     }
 }

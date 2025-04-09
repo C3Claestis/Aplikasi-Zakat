@@ -28,7 +28,7 @@ namespace Aplikasi_Zakat
             AmilModule amilModule = new AmilModule();
             amilModule.btnInput.Enabled = true;
             amilModule.btnEdit.Enabled = false;
-            amilModule.ShowDialog();
+            amilModule.Show();
             ShowData();
         }
 
@@ -82,7 +82,7 @@ namespace Aplikasi_Zakat
                 amilModule.btnInput.Enabled = false;
                 amilModule.btnClear.Enabled = false;
                 amilModule.btnEdit.Enabled = true;
-                amilModule.ShowDialog();
+                amilModule.Show();
             }
             else if (colname == "Delete")
             {

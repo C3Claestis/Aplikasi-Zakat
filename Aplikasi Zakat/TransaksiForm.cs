@@ -28,7 +28,7 @@ namespace Aplikasi_Zakat
             TransaksiModule transaksiModule = new TransaksiModule();
             transaksiModule.NonAktifkanKomponen();
             transaksiModule.btnEdit.Enabled = false;
-            transaksiModule.ShowDialog();            
+            transaksiModule.Show();            
             ShowData();
         }
         
@@ -110,7 +110,7 @@ namespace Aplikasi_Zakat
                 transaksiModule.btnInput.Enabled = false;
                 transaksiModule.btnClear.Enabled = false;
                 transaksiModule.btnEdit.Enabled = true;
-                transaksiModule.ShowDialog();
+                transaksiModule.Show();
                 transaksiModule.AktifKomponen();
 
                 ShowData();
