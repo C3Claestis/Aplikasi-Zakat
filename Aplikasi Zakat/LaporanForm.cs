@@ -1,9 +1,12 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +34,7 @@ namespace Aplikasi_Zakat
             DateTime tanggalAwal = dateAwal.Value.Date;
             DateTime tanggalAkhir = dateAkhir.Value.Date;
 
-            string query = @"
+            StringBuilder queryBuilder = new StringBuilder(@"
             SELECT 
                 t.Tanggal,
                 t.JenisTransaksi,
@@ -42,18 +45,27 @@ namespace Aplikasi_Zakat
             FROM tbTransaksi t
             LEFT JOIN tbMuzzaki mz ON t.IdTerkait = mz.IdMuzzaki AND t.JenisTransaksi = 'Penerimaan'
             LEFT JOIN tbMustahiq mh ON t.IdTerkait = mh.IdMustahiq AND t.JenisTransaksi = 'Distribusi'
-            WHERE 
-                t.Tanggal BETWEEN @awal AND @akhir
-                AND t.JenisTransaksi = @jenisTransaksi
-                AND t.JenisZakat = @jenisZakat
-            ORDER BY t.Tanggal ASC";
+            WHERE t.Tanggal BETWEEN @awal AND @akhir
+            ");
 
-            using (SqlCommand cmd = new SqlCommand(query, conn))
+            if (jenisTransaksi != "Semua")
+                queryBuilder.Append(" AND t.JenisTransaksi = @jenisTransaksi");
+
+            if (jenisZakat != "Semua")
+                queryBuilder.Append(" AND t.JenisZakat = @jenisZakat");
+
+            queryBuilder.Append(" ORDER BY t.Tanggal ASC");
+
+            using (SqlCommand cmd = new SqlCommand(queryBuilder.ToString(), conn))
             {
                 cmd.Parameters.AddWithValue("@awal", tanggalAwal);
                 cmd.Parameters.AddWithValue("@akhir", tanggalAkhir);
-                cmd.Parameters.AddWithValue("@jenisTransaksi", jenisTransaksi);
-                cmd.Parameters.AddWithValue("@jenisZakat", jenisZakat);
+
+                if (jenisTransaksi != "Semua")
+                    cmd.Parameters.AddWithValue("@jenisTransaksi", jenisTransaksi);
+
+                if (jenisZakat != "Semua")
+                    cmd.Parameters.AddWithValue("@jenisZakat", jenisZakat);
 
                 conn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -62,8 +74,8 @@ namespace Aplikasi_Zakat
                 while (dr.Read())
                 {
                     no++;
-                    string muzzaki = jenisTransaksi == "Penerimaan" ? dr["NamaMuzzaki"].ToString() : "-";
-                    string mustahiq = jenisTransaksi == "Distribusi" ? dr["NamaMustahiq"].ToString() : "-";
+                    string muzzaki = dr["JenisTransaksi"].ToString() == "Penerimaan" ? dr["NamaMuzzaki"].ToString() : "-";
+                    string mustahiq = dr["JenisTransaksi"].ToString() == "Distribusi" ? dr["NamaMustahiq"].ToString() : "-";
 
                     dgvLaporan.Rows.Add(
                         no,
@@ -79,22 +91,65 @@ namespace Aplikasi_Zakat
                 dr.Close();
 
                 decimal total = 0;
-
                 foreach (DataGridViewRow row in dgvLaporan.Rows)
                 {
-                    if (row.Cells[6].Value != null) // pastikan kolom 6 (Jumlah) tidak null
+                    if (row.Cells[6].Value != null)
                     {
                         string jumlahStr = row.Cells[6].Value.ToString().Replace("Rp", "").Replace(".", "").Trim();
                         if (decimal.TryParse(jumlahStr, out decimal jumlah))
-                        {
                             total += jumlah;
-                        }
                     }
                 }
 
                 txtTotal.Text = $"Total Jumlah: Rp{total:N0}";
-
                 conn.Close();
+            }
+        }
+        private void ExportToPDF(DataGridView dgv, string filePath)
+        {
+            Document doc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+            PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+            doc.Open();
+
+            PdfPTable table = new PdfPTable(dgv.Columns.Count);
+            table.WidthPercentage = 100;
+
+            // Header
+            foreach (DataGridViewColumn column in dgv.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+                table.AddCell(cell);
+            }
+
+            // Data
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        table.AddCell(cell.Value?.ToString() ?? "");
+                    }
+                }
+            }
+
+            doc.Add(table);
+            doc.Close();
+
+            MessageBox.Show("Data berhasil diexport ke PDF!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnCetak_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "PDF Files|*.pdf";
+            save.Title = "Simpan Laporan ke PDF";
+            save.FileName = "LaporanZakat.pdf";
+
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                ExportToPDF(dgvLaporan, save.FileName);
             }
         }
     }

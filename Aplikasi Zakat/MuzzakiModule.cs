@@ -73,7 +73,7 @@ namespace Aplikasi_Zakat
             {
                 if(MessageBox.Show("Ingin Update data ini?", "Update Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cmd = new SqlCommand("UPDATE tbMuzzaki SET NamaMuzzaki = @Name, Alamat = @Address, NoHp = @Phone, Email = @Email, JenisZakat = @Jenis, Jumlah = @Jumlah, Nominal = @Nominal, MetodeBayar = @MetodeBayar, TanggalZakat = @Tanggal WHERE Id LIKE '" + lblIdMuzzaki.Text + "' ", conn);
+                    cmd = new SqlCommand("UPDATE tbMuzzaki SET NamaMuzzaki = @Name, Alamat = @Address, NoHp = @Phone, Email = @Email, JenisZakat = @Jenis, Jumlah = @Jumlah, Nominal = @Nominal, MetodeBayar = @MetodeBayar, TanggalZakat = @Tanggal WHERE IdMuzzaki LIKE '" + lblIdMuzzaki.Text + "' ", conn);
                     cmd.Parameters.AddWithValue("@Name", txtNamaMuzzaki.Text);
                     cmd.Parameters.AddWithValue("@Address", txtAlamatMuzzaki.Text);
                     cmd.Parameters.AddWithValue("@Phone", txtHpMuzzaki.Text);

@@ -98,6 +98,7 @@
             this.btnCetak.Size = new System.Drawing.Size(136, 45);
             this.btnCetak.TabIndex = 12;
             this.btnCetak.Text = "CETAK";
+            this.btnCetak.Click += new System.EventHandler(this.btnCetak_Click);
             // 
             // btnTampilLaporan
             // 
@@ -122,6 +123,7 @@
             this.cmbJenisZakat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cmbJenisZakat.FormattingEnabled = true;
             this.cmbJenisZakat.Items.AddRange(new object[] {
+            "Semua",
             "Zakat Fitrah",
             "Zakat Maal",
             "Shodaqoh",
@@ -137,6 +139,7 @@
             this.cmbJenisTransaksi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cmbJenisTransaksi.FormattingEnabled = true;
             this.cmbJenisTransaksi.Items.AddRange(new object[] {
+            "Semua",
             "Penerimaan",
             "Distribusi"});
             this.cmbJenisTransaksi.Location = new System.Drawing.Point(357, 91);
@@ -302,10 +305,10 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "Id";
+            this.Column1.HeaderText = "No";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 57;
+            this.Column1.Width = 65;
             // 
             // Column2
             // 
