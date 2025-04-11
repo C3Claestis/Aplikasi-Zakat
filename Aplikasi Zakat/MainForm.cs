@@ -78,5 +78,12 @@ namespace Aplikasi_Zakat
 
 
         #endregion METHODS                            
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();            
+        }
     }
 }

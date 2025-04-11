@@ -54,18 +54,18 @@
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
+            this.pictureUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.labelForm = new System.Windows.Forms.Label();
-            this.pictureUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,6 +97,7 @@
             this.btnLogout.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogout.Size = new System.Drawing.Size(64, 54);
             this.btnLogout.TabIndex = 2;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // guna2CirclePictureBox1
             // 
@@ -403,6 +404,21 @@
             this.lblUser.Text = "user";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureUser
+            // 
+            this.pictureUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureUser.Image = ((System.Drawing.Image)(resources.GetObject("pictureUser.Image")));
+            this.pictureUser.ImageRotate = 0F;
+            this.pictureUser.Location = new System.Drawing.Point(80, 30);
+            this.pictureUser.Name = "pictureUser";
+            this.pictureUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureUser.Size = new System.Drawing.Size(80, 80);
+            this.pictureUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureUser.TabIndex = 0;
+            this.pictureUser.TabStop = false;
+            // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.LightGray;
@@ -435,21 +451,6 @@
             this.labelForm.Text = "label5";
             this.labelForm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureUser
-            // 
-            this.pictureUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureUser.Image = ((System.Drawing.Image)(resources.GetObject("pictureUser.Image")));
-            this.pictureUser.ImageRotate = 0F;
-            this.pictureUser.Location = new System.Drawing.Point(80, 30);
-            this.pictureUser.Name = "pictureUser";
-            this.pictureUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pictureUser.Size = new System.Drawing.Size(80, 80);
-            this.pictureUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureUser.TabIndex = 0;
-            this.pictureUser.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -472,9 +473,9 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             this.ResumeLayout(false);
 
         }
