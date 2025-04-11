@@ -56,7 +56,7 @@ namespace Aplikasi_Zakat
                 return;
             }
 
-            int jumlah = int.Parse(txtJumlahEkor.Text);
+            double jumlah = double.Parse(txtJumlahEkor.Text);
             string hasil = "";
             string jenis = cmbJenis.Text;
 
